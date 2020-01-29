@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    LinkedList sportsQuestions = new LinkedList();
-
     final Deck popDeck = new Deck("Pop");
     final Deck scienceDeck = new Deck("Science");
+    final Deck sportsDeck = new Deck("Sports");
     final Deck rockDeck = new Deck("Rock");
+
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 
     public Game() {
-        for (int i = 0; i < 50; i++) {
-            sportsQuestions.addLast("Sports Question " + i);
-        }
     }
 
     public boolean add(String playerName) {
@@ -65,7 +62,7 @@ public class Game {
         if (category.equals(categories[1]))
             System.out.println(scienceDeck.getNextQuestion());
         if (category.equals(categories[2]))
-            System.out.println(sportsQuestions.removeFirst());
+            System.out.println(sportsDeck.getNextQuestion());
         if (category.equals(categories[3]))
             System.out.println(rockDeck.getNextQuestion());
     }
