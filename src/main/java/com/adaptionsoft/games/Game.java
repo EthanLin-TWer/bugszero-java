@@ -3,14 +3,9 @@ package com.adaptionsoft.games;
 import java.util.ArrayList;
 
 public class Game {
-    final Deck popDeck = new Deck("Pop");
-    final Deck scienceDeck = new Deck("Science");
-    final Deck sportsDeck = new Deck("Sports");
-    final Deck rockDeck = new Deck("Rock");
-
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
-    private DecksManager decksManager = new DecksManager();
+    private final DecksManager decksManager = new DecksManager();
 
     public boolean add(String playerName) {
         players.add(new Player(playerName));
