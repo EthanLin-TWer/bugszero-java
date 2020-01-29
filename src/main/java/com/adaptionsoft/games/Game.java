@@ -84,7 +84,6 @@ public class Game {
         if (getCurrentPlace() == 9) return categories[1];
         if (getCurrentPlace() == 2) return categories[2];
         if (getCurrentPlace() == 6) return categories[2];
-        if (getCurrentPlace() == 10) return categories[2];
         return categories[getCurrentPlace() % 4];
     }
 
