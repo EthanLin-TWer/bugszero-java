@@ -49,7 +49,7 @@ public class Game {
     }
 
     private void askQuestion() {
-        String[] categories = new String[]{ Category.POP.getName(), "Science", "Sports", "Rock" };
+        String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), "Sports", "Rock" };
         String category = categories[getCurrentPlace() % 4];
 
         System.out.println("The category is " + category);
