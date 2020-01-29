@@ -7,7 +7,8 @@ public class Deck {
 
     public Deck() {
         for (int i = 0; i < 50; i++) {
-            questions.addLast("Pop Question " + i);
+            final String category = "Pop";
+            questions.addLast(category + " Question " + i);
         }
     }
 
