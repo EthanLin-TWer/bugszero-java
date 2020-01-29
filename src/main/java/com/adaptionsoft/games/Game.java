@@ -12,9 +12,6 @@ public class Game {
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 
-    public Game() {
-    }
-
     public boolean add(String playerName) {
         players.add(new Player(playerName));
 
@@ -52,7 +49,7 @@ public class Game {
     }
 
     private void askQuestion() {
-        String[] categories = new String[]{ "Pop", "Science", "Sports", "Rock" };
+        String[] categories = new String[]{ Category.POP.getName(), "Science", "Sports", "Rock" };
         String category = categories[getCurrentPlace() % 4];
 
         System.out.println("The category is " + category);
