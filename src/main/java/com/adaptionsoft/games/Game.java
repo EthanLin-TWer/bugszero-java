@@ -97,8 +97,7 @@ public class Game {
                         + getCurrentGoldCoins()
                         + " Gold Coins.");
 
-                boolean winner = didPlayerWin();
-                return winner;
+                return didPlayerWin();
             } else {
                 return true;
             }
@@ -110,8 +109,7 @@ public class Game {
                     + getCurrentGoldCoins()
                     + " Gold Coins.");
 
-            boolean winner = didPlayerWin();
-            return winner;
+            return didPlayerWin();
         }
     }
 
