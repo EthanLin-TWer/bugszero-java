@@ -62,6 +62,9 @@ public class Game {
     }
 
     private void askQuestion() {
+        String[] categories = new String[]{ "Pop", "Science", "Sports", "Rock" };
+        String category = categories[getCurrentPlace() % 4];
+
         System.out.println("The category is " + currentCategory());
 
         if (currentCategory().equals("Pop"))
