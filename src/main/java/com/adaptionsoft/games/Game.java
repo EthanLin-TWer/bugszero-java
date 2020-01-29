@@ -65,14 +65,10 @@ public class Game {
     }
 
     private void movePlayerAndAskQuestion(int roll) {
-        movePlayer(roll);
+        players.get(currentPlayer).moveForward(roll);
 
         System.out.println("The category is " + currentCategory());
         askQuestion();
-    }
-
-    private void movePlayer(int roll) {
-        players.get(currentPlayer).moveForward(roll);
     }
 
     private void askQuestion() {
