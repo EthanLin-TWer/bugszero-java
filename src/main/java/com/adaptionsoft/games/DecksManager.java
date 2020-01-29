@@ -18,7 +18,6 @@ public class DecksManager {
 
     public String getNextQuestion(int place) {
         Category category = Category.get(place);
-        System.out.println("The category is " + category.getName());
 
         return categoryDecks.get(category).getNextQuestion();
     }

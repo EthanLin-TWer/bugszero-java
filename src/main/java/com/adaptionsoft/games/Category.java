@@ -17,6 +17,10 @@ public enum Category {
 
     public static Category get(int place) {
         Category[] categories = Category.values();
-        return categories[place % categories.length];
+        Category result = categories[place % categories.length];
+
+        System.out.println("The category is " + result.getName());
+
+        return result;
     }
 }
