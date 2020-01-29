@@ -12,6 +12,8 @@ public class DecksManager {
     public DecksManager() {
         categoryDecks.put(Category.POP, popDeck);
         categoryDecks.put(Category.SCIENCE, scienceDeck);
+        categoryDecks.put(Category.SPORTS, sportsDeck);
+        categoryDecks.put(Category.ROCK, rockDeck);
     }
 
     public String getNextQuestion(int place) {
@@ -27,10 +29,10 @@ public class DecksManager {
             return categoryDecks.get(Category.SCIENCE).getNextQuestion();
         }
         if (category.equals(categories[2].getName())) {
-            return sportsDeck.getNextQuestion();
+            return categoryDecks.get(Category.SPORTS).getNextQuestion();
         }
         if (category.equals(categories[3].getName())) {
-            return rockDeck.getNextQuestion();
+            return categoryDecks.get(Category.ROCK).getNextQuestion();
         }
         throw new Error("");
     }
