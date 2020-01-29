@@ -59,12 +59,9 @@ public class Game {
                 System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
             }
-
         } else {
-
             movePlayerAndAskQuestion(roll);
         }
-
     }
 
     private void movePlayerAndAskQuestion(int roll) {
@@ -89,7 +86,6 @@ public class Game {
         if (currentCategory() == "Rock")
             System.out.println(rockQuestions.removeFirst());
     }
-
 
     private String currentCategory() {
         if (places[currentPlayer] == 0) return "Pop";
@@ -124,10 +120,7 @@ public class Game {
                 if (currentPlayer == players.size()) currentPlayer = 0;
                 return true;
             }
-
-
         } else {
-
             System.out.println("Answer was corrent!!!!");
             purses[currentPlayer]++;
             System.out.println(players.get(currentPlayer)
@@ -138,7 +131,6 @@ public class Game {
             boolean winner = didPlayerWin();
             currentPlayer++;
             if (currentPlayer == players.size()) currentPlayer = 0;
-
             return winner;
         }
     }
@@ -152,7 +144,6 @@ public class Game {
         if (currentPlayer == players.size()) currentPlayer = 0;
         return true;
     }
-
 
     private boolean didPlayerWin() {
         return !(purses[currentPlayer] == 6);
