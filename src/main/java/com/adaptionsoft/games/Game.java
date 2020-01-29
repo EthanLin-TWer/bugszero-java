@@ -100,10 +100,6 @@ public class Game {
         return "Rock";
     }
 
-    private int getCurrentPlace() {
-        return places[currentPlayer];
-    }
-
     public boolean wasCorrectlyAnswered() {
         if (isCurrentPlayerInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox) {
@@ -137,14 +133,6 @@ public class Game {
         }
     }
 
-    private int getCurrentPlayerPurse() {
-        return purses[currentPlayer];
-    }
-
-    private boolean isCurrentPlayerInPenaltyBox() {
-        return inPenaltyBox[currentPlayer];
-    }
-
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         System.out.println(players.get(currentPlayer) + " was sent to the penalty box");
@@ -157,5 +145,17 @@ public class Game {
 
     private boolean didPlayerWin() {
         return !(getCurrentPlayerPurse() == 6);
+    }
+
+    private int getCurrentPlace() {
+        return places[currentPlayer];
+    }
+
+    private int getCurrentPlayerPurse() {
+        return purses[currentPlayer];
+    }
+
+    private boolean isCurrentPlayerInPenaltyBox() {
+        return inPenaltyBox[currentPlayer];
     }
 }
