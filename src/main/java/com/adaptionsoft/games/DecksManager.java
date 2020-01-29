@@ -8,9 +8,9 @@ public class DecksManager {
 
     public String getNextQuestion(int place) {
         String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
-        String category = categories[place % 4];
 
         Category[] temp_categories = Category.values();
+        String category = temp_categories[place % temp_categories.length].getName();
 
         System.out.println("The category is " + category);
 
