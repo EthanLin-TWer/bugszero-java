@@ -8,7 +8,7 @@ public class Game {
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
 
-    final Deck deck = new Deck();
+    final Deck deck = new Deck("Pop");
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 

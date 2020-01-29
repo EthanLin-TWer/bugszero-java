@@ -5,9 +5,8 @@ import java.util.LinkedList;
 public class Deck {
     public LinkedList<String> questions = new LinkedList<String>();
 
-    public Deck() {
+    public Deck(String category) {
         for (int i = 0; i < 50; i++) {
-            final String category = "Pop";
             questions.addLast(category + " Question " + i);
         }
     }
