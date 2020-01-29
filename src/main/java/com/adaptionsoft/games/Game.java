@@ -49,12 +49,8 @@ public class Game {
     }
 
     private void askQuestion() {
-        String question = getNextQuestion(getCurrentPlace());
+        String question = decksManager.getNextQuestion(getCurrentPlace());
         System.out.println(question);
-    }
-
-    private String getNextQuestion(int place) {
-        return decksManager.getNextQuestion(place);
     }
 
     public boolean wasCorrectlyAnswered() {
