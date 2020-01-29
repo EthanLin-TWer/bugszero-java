@@ -88,15 +88,11 @@ public class Game {
     }
 
     public boolean wasCorrectlyAnswered() {
-        if (isCurrentPlayerInPenaltyBox()) {
-            if (isGettingOutOfPenaltyBox) {
-                return answeredCorrect();
-            } else {
-                return true;
-            }
-        } else {
-            return answeredCorrect();
+        if (isCurrentPlayerInPenaltyBox() && !isGettingOutOfPenaltyBox) {
+            return true;
         }
+        return answeredCorrect();
+
     }
 
     private boolean answeredCorrect() {
