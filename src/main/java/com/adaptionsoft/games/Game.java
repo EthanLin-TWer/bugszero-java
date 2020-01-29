@@ -57,20 +57,17 @@ public class Game {
         String question = null;
         if (category.equals(categories[0])) {
             question = popDeck.getNextQuestion();
-            System.out.println(question);
         }
         if (category.equals(categories[1])) {
             question = scienceDeck.getNextQuestion();
-            System.out.println(question);
         }
         if (category.equals(categories[2])) {
             question = sportsDeck.getNextQuestion();
-            System.out.println(question);
         }
         if (category.equals(categories[3])) {
             question = rockDeck.getNextQuestion();
-            System.out.println(question);
         }
+        System.out.println(question);
     }
 
     public boolean wasCorrectlyAnswered() {
