@@ -8,7 +8,7 @@ public class Game {
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
 
-    final Deck deck = new Deck("Pop");
+    final Deck popDeck = new Deck("Pop");
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 
@@ -63,7 +63,7 @@ public class Game {
         System.out.println("The category is " + category);
 
         if (category.equals(categories[0]))
-            System.out.println(deck.getNextQuestion());
+            System.out.println(popDeck.getNextQuestion());
         if (category.equals(categories[1]))
             System.out.println(scienceQuestions.removeFirst());
         if (category.equals(categories[2]))
