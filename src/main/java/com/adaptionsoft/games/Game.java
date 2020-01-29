@@ -10,7 +10,6 @@ public class Game {
     LinkedList rockQuestions = new LinkedList();
 
     int currentPlayer = 0;
-    boolean isGettingOutOfPenaltyBox;
     private final ArrayList<Player> players = new ArrayList<>();
 
     public Game() {
@@ -40,7 +39,6 @@ public class Game {
 
         if (isCurrentPlayerInPenaltyBox()) {
             if (roll % 2 != 0) {
-                isGettingOutOfPenaltyBox = true;
                 getCurrentPlayer().gettingOutOfPenaltyBox();
                 movePlayerAndAskQuestion(roll);
                 return false;
@@ -90,7 +88,7 @@ public class Game {
     }
 
     public boolean wasCorrectlyAnswered() {
-        if (isCurrentPlayerInPenaltyBox() && !isGettingOutOfPenaltyBox) {
+        if (isCurrentPlayerInPenaltyBox()) {
             return true;
         }
 

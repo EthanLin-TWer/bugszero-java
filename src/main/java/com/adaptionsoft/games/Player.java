@@ -48,6 +48,7 @@ public class Player {
     }
 
     public void gettingOutOfPenaltyBox() {
+        isInPenaltyBox = false;
         System.out.println(name + " is getting out of the penalty box");
     }
 }
