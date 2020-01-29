@@ -18,21 +18,21 @@ public class DecksManager {
 
     public String getNextQuestion(int place) {
         Category[] categories = Category.values();
-        final Category typedCategory = categories[place % categories.length];
+        final Category category = categories[place % categories.length];
 
-        System.out.println("The category is " + typedCategory.getName());
+        System.out.println("The category is " + category.getName());
 
-        if (typedCategory.equals(categories[0])) {
+        if (category.equals(categories[0])) {
             return categoryDecks.get(Category.POP).getNextQuestion();
 
         }
-        if (typedCategory.equals(categories[1])) {
+        if (category.equals(categories[1])) {
             return categoryDecks.get(Category.SCIENCE).getNextQuestion();
         }
-        if (typedCategory.equals(categories[2])) {
+        if (category.equals(categories[2])) {
             return categoryDecks.get(Category.SPORTS).getNextQuestion();
         }
-        if (typedCategory.equals(categories[3])) {
+        if (category.equals(categories[3])) {
             return categoryDecks.get(Category.ROCK).getNextQuestion();
         }
         throw new Error("");
