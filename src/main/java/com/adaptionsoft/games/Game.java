@@ -112,7 +112,6 @@ public class Game {
         System.out.println("Question was incorrectly answered");
         getCurrentPlayer().sentToPenaltyBox();
 
-        setNextPlayer();
         return true;
     }
 
