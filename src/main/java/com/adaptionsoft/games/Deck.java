@@ -5,10 +5,6 @@ import java.util.LinkedList;
 public class Deck {
     public LinkedList<String> questions = new LinkedList<String>();
 
-    public Deck(String category) {
-        this(Category.valueOf(category.toUpperCase()));
-    }
-
     public Deck(Category category) {
         for (int i = 0; i < 50; i++) {
             questions.addLast(category.getName() + " Question " + i);
