@@ -16,6 +16,7 @@ public class Game {
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
+    private ArrayList<Player> temp_players = new ArrayList<>();
 
     public Game() {
         for (int i = 0; i < 50; i++) {
@@ -32,6 +33,7 @@ public class Game {
 
     public boolean add(String playerName) {
         players.add(playerName);
+        temp_players.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
