@@ -69,7 +69,7 @@ public class Game {
         System.out.println("The category is " + category);
 
         if (category.equals(categories[0]))
-            System.out.println(popQuestions.removeFirst());
+            System.out.println(deck.getNextQuestion());
         if (category.equals(categories[1]))
             System.out.println(scienceQuestions.removeFirst());
         if (category.equals(categories[2]))

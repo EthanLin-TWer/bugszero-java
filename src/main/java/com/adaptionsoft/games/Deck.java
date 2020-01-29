@@ -10,4 +10,8 @@ public class Deck {
             popQuestions.addLast("Pop Question " + i);
         }
     }
+
+    public String getNextQuestion() {
+        return popQuestions.removeFirst();
+    }
 }
