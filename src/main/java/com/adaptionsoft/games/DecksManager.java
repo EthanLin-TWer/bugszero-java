@@ -11,6 +11,7 @@ public class DecksManager {
 
     public DecksManager() {
         categoryDecks.put(Category.POP, popDeck);
+        categoryDecks.put(Category.SCIENCE, scienceDeck);
     }
 
     public String getNextQuestion(int place) {
@@ -23,7 +24,7 @@ public class DecksManager {
             return categoryDecks.get(Category.POP).getNextQuestion();
         }
         if (category.equals(categories[1].getName())) {
-            return scienceDeck.getNextQuestion();
+            return categoryDecks.get(Category.SCIENCE).getNextQuestion();
         }
         if (category.equals(categories[2].getName())) {
             return sportsDeck.getNextQuestion();
