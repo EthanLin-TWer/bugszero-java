@@ -113,7 +113,7 @@ public class Game {
                 purses[currentPlayer]++;
                 System.out.println(players.get(currentPlayer)
                         + " now has "
-                        + purses[currentPlayer]
+                        + getCurrentPlayerPurse()
                         + " Gold Coins.");
 
                 return didPlayerWin();
@@ -127,7 +127,7 @@ public class Game {
             purses[currentPlayer]++;
             System.out.println(players.get(currentPlayer)
                     + " now has "
-                    + purses[currentPlayer]
+                    + getCurrentPlayerPurse()
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
@@ -135,6 +135,10 @@ public class Game {
             if (currentPlayer == players.size()) currentPlayer = 0;
             return winner;
         }
+    }
+
+    private int getCurrentPlayerPurse() {
+        return purses[currentPlayer];
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
@@ -152,6 +156,6 @@ public class Game {
     }
 
     private boolean didPlayerWin() {
-        return !(purses[currentPlayer] == 6);
+        return !(getCurrentPlayerPurse() == 6);
     }
 }
