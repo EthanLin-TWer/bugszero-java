@@ -111,6 +111,7 @@ public class Game {
                 currentPlayer++;
                 if (currentPlayer == players.size()) currentPlayer = 0;
                 goldCoins[currentPlayer]++;
+                players.get(currentPlayer).increaseGoldCoin();
                 System.out.println(getCurrentPlayerName()
                         + " now has "
                         + getCurrentGoldCoins()
