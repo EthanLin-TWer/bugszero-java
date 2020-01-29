@@ -3,8 +3,8 @@ package com.adaptionsoft.games;
 public class DecksManager {
     final Deck popDeck = new Deck(Category.POP);
     final Deck scienceDeck = new Deck(Category.SCIENCE);
-    final Deck sportsDeck = new Deck("Sports");
-    final Deck rockDeck = new Deck("Rock");
+    final Deck sportsDeck = new Deck(Category.SPORTS);
+    final Deck rockDeck = new Deck(Category.ROCK);
 
     public String getNextQuestion(int place) {
         String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
