@@ -59,12 +59,12 @@ public class Game {
 
     private void movePlayerAndAskQuestion(int roll) {
         players.get(currentPlayer).moveForward(roll);
-
-        System.out.println("The category is " + currentCategory());
         askQuestion();
     }
 
     private void askQuestion() {
+        System.out.println("The category is " + currentCategory());
+
         if (currentCategory().equals("Pop"))
             System.out.println(popQuestions.removeFirst());
         if (currentCategory().equals("Science"))
