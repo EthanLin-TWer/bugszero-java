@@ -5,17 +5,16 @@ import java.util.LinkedList;
 
 public class Game {
     LinkedList sportsQuestions = new LinkedList();
-    LinkedList rockQuestions = new LinkedList();
 
     final Deck popDeck = new Deck("Pop");
     final Deck scienceDeck = new Deck("Science");
+    final Deck rockDeck = new Deck("Rock");
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 
     public Game() {
         for (int i = 0; i < 50; i++) {
             sportsQuestions.addLast("Sports Question " + i);
-            rockQuestions.addLast("Rock Question " + i);
         }
     }
 
@@ -68,7 +67,7 @@ public class Game {
         if (category.equals(categories[2]))
             System.out.println(sportsQuestions.removeFirst());
         if (category.equals(categories[3]))
-            System.out.println(rockQuestions.removeFirst());
+            System.out.println(rockDeck.getNextQuestion());
     }
 
     public boolean wasCorrectlyAnswered() {
