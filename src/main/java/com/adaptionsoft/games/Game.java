@@ -65,21 +65,16 @@ public class Game {
         String[] categories = new String[]{ "Pop", "Science", "Sports", "Rock" };
         String category = categories[getCurrentPlace() % 4];
 
-        System.out.println("The category is " + currentCategory());
+        System.out.println("The category is " + category);
 
-        if (currentCategory().equals("Pop"))
+        if (category.equals("Pop"))
             System.out.println(popQuestions.removeFirst());
-        if (currentCategory().equals("Science"))
+        if (category.equals("Science"))
             System.out.println(scienceQuestions.removeFirst());
-        if (currentCategory().equals("Sports"))
+        if (category.equals("Sports"))
             System.out.println(sportsQuestions.removeFirst());
-        if (currentCategory().equals("Rock"))
+        if (category.equals("Rock"))
             System.out.println(rockQuestions.removeFirst());
-    }
-
-    private String currentCategory() {
-        String[] categories = new String[]{ "Pop", "Science", "Sports", "Rock" };
-        return categories[getCurrentPlace() % 4];
     }
 
     public boolean wasCorrectlyAnswered() {
