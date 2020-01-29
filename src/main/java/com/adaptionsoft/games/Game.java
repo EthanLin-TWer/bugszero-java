@@ -10,6 +10,7 @@ public class Game {
 
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
+    private DecksManager decksManager = new DecksManager();
 
     public boolean add(String playerName) {
         players.add(new Player(playerName));
@@ -53,24 +54,7 @@ public class Game {
     }
 
     private String getNextQuestion(int place) {
-        String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
-        String category = categories[place % 4];
-
-        System.out.println("The category is " + category);
-
-        if (category.equals(categories[0])) {
-            return popDeck.getNextQuestion();
-        }
-        if (category.equals(categories[1])) {
-            return scienceDeck.getNextQuestion();
-        }
-        if (category.equals(categories[2])) {
-            return sportsDeck.getNextQuestion();
-        }
-        if (category.equals(categories[3])) {
-            return rockDeck.getNextQuestion();
-        }
-        throw new Error("");
+        return decksManager.getNextQuestion(place);
     }
 
     public boolean wasCorrectlyAnswered() {
