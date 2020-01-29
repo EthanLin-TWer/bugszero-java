@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    LinkedList popQuestions = new LinkedList();
     LinkedList scienceQuestions = new LinkedList();
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
@@ -19,11 +18,6 @@ public class Game {
             sportsQuestions.addLast("Sports Question " + i);
             rockQuestions.addLast("Rock Question " + i);
         }
-        initPopQuestions();
-    }
-
-    private void initPopQuestions() {
-        popQuestions = deck.popQuestions;
     }
 
     public boolean add(String playerName) {
