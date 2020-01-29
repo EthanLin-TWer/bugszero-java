@@ -109,7 +109,7 @@ public class Game {
                 purses[currentPlayer]++;
                 System.out.println(players.get(currentPlayer)
                         + " now has "
-                        + getCurrentPlayerPurse()
+                        + getCurrentGoldCoins()
                         + " Gold Coins.");
 
                 return didPlayerWin();
@@ -123,7 +123,7 @@ public class Game {
             purses[currentPlayer]++;
             System.out.println(players.get(currentPlayer)
                     + " now has "
-                    + getCurrentPlayerPurse()
+                    + getCurrentGoldCoins()
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
@@ -144,14 +144,14 @@ public class Game {
     }
 
     private boolean didPlayerWin() {
-        return !(getCurrentPlayerPurse() == 6);
+        return !(getCurrentGoldCoins() == 6);
     }
 
     private int getCurrentPlace() {
         return places[currentPlayer];
     }
 
-    private int getCurrentPlayerPurse() {
+    private int getCurrentGoldCoins() {
         return purses[currentPlayer];
     }
 
