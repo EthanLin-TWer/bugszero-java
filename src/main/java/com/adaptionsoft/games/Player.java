@@ -3,6 +3,7 @@ package com.adaptionsoft.games;
 public class Player {
     private final String name;
     private int goldCoins = 0;
+    private int place = 0;
 
     public Player(String name) {
         this.name = name;
