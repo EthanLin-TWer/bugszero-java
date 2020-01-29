@@ -54,8 +54,9 @@ public class Game {
     }
 
     private String getNextQuestion() {
+        final int place = getCurrentPlace();
         String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
-        String category = categories[getCurrentPlace() % 4];
+        String category = categories[place % 4];
 
         System.out.println("The category is " + category);
 
