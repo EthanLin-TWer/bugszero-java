@@ -158,7 +158,7 @@ public class Game {
     }
 
     private int getCurrentGoldCoins() {
-        return goldCoins[currentPlayer];
+        return players.get(currentPlayer).getGoldCoins();
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {

@@ -15,4 +15,8 @@ public class Player {
     public void increaseGoldCoin() {
         goldCoins += 1;
     }
+
+    public int getGoldCoins() {
+        return goldCoins;
+    }
 }
