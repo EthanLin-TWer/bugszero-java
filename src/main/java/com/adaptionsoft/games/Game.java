@@ -92,15 +92,13 @@ public class Game {
             return true;
         }
 
-        return answeredCorrect();
-
+        answeredCorrect();
+        return didPlayerWin();
     }
 
-    private boolean answeredCorrect() {
+    private void answeredCorrect() {
         System.out.println("Answer was correct!!!!");
         getCurrentPlayer().increaseGoldCoin();
-
-        return didPlayerWin();
     }
 
     public void setNextPlayer() {
