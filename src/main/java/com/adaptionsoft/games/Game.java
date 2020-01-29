@@ -91,6 +91,7 @@ public class Game {
         if (isCurrentPlayerInPenaltyBox() && !isGettingOutOfPenaltyBox) {
             return true;
         }
+
         return answeredCorrect();
 
     }
@@ -98,10 +99,6 @@ public class Game {
     private boolean answeredCorrect() {
         System.out.println("Answer was correct!!!!");
         getCurrentPlayer().increaseGoldCoin();
-        System.out.println(getCurrentPlayerName()
-                + " now has "
-                + getCurrentGoldCoins()
-                + " Gold Coins.");
 
         return didPlayerWin();
     }
