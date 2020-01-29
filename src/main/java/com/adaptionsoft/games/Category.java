@@ -14,4 +14,9 @@ public enum Category {
     public String getName() {
         return name;
     }
+
+    public static Category get(int place) {
+        Category[] categories = Category.values();
+        return categories[place % categories.length];
+    }
 }
