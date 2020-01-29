@@ -3,7 +3,7 @@ package com.adaptionsoft.games;
 import java.util.Random;
 
 public class GameRunner {
-	private static boolean notAWinner;
+	private static boolean notAWinner = true;
 
 	public static void main(String[] args) {
 		Random rand = new Random();
