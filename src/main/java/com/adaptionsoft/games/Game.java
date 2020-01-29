@@ -54,11 +54,11 @@ public class Game {
     }
 
     private Object getCurrentPlayerName() {
-        return players.get(currentPlayer).getName();
+        return getCurrentPlayer().getName();
     }
 
     private void movePlayerAndAskQuestion(int roll) {
-        players.get(currentPlayer).moveForward(roll);
+        getCurrentPlayer().moveForward(roll);
         askQuestion();
     }
 
@@ -93,7 +93,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 updateCurrentPlayer();
-                players.get(currentPlayer).increaseGoldCoin();
+                getCurrentPlayer().increaseGoldCoin();
                 System.out.println(getCurrentPlayerName()
                         + " now has "
                         + getCurrentGoldCoins()
@@ -106,7 +106,7 @@ public class Game {
             }
         } else {
             System.out.println("Answer was correct!!!!");
-            players.get(currentPlayer).increaseGoldCoin();
+            getCurrentPlayer().increaseGoldCoin();
             System.out.println(getCurrentPlayerName()
                     + " now has "
                     + getCurrentGoldCoins()
@@ -128,7 +128,7 @@ public class Game {
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
-        players.get(currentPlayer).sentToPenaltyBox();
+        getCurrentPlayer().sentToPenaltyBox();
 
         updateCurrentPlayer();
         return true;
@@ -139,14 +139,18 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return players.get(currentPlayer).getPlace();
+        return getCurrentPlayer().getPlace();
     }
 
     private int getCurrentGoldCoins() {
-        return players.get(currentPlayer).getGoldCoins();
+        return getCurrentPlayer().getGoldCoins();
+    }
+
+    private Player getCurrentPlayer() {
+        return players.get(currentPlayer);
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
-        return players.get(currentPlayer).isInPenaltyBox();
+        return getCurrentPlayer().isInPenaltyBox();
     }
 }
