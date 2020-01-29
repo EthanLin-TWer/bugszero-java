@@ -59,20 +59,19 @@ public class Game {
 
         System.out.println("The category is " + category);
 
-        String question = null;
         if (category.equals(categories[0])) {
-            question = popDeck.getNextQuestion();
+            return popDeck.getNextQuestion();
         }
         if (category.equals(categories[1])) {
-            question = scienceDeck.getNextQuestion();
+            return scienceDeck.getNextQuestion();
         }
         if (category.equals(categories[2])) {
-            question = sportsDeck.getNextQuestion();
+            return sportsDeck.getNextQuestion();
         }
         if (category.equals(categories[3])) {
-            question = rockDeck.getNextQuestion();
+            return rockDeck.getNextQuestion();
         }
-        return question;
+        throw new Error("");
     }
 
     public boolean wasCorrectlyAnswered() {
