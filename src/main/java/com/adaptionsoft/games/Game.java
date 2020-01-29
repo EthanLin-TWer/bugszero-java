@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    int[] places = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
     LinkedList popQuestions = new LinkedList();
@@ -31,7 +30,6 @@ public class Game {
 
     public boolean add(String playerName) {
         players.add(new Player(playerName));
-        places[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
