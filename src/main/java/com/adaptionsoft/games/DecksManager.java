@@ -7,23 +7,21 @@ public class DecksManager {
     final Deck rockDeck = new Deck(Category.ROCK);
 
     public String getNextQuestion(int place) {
-        String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
-
         Category[] temp_categories = Category.values();
         String category = temp_categories[place % temp_categories.length].getName();
 
         System.out.println("The category is " + category);
 
-        if (category.equals(categories[0])) {
+        if (category.equals(temp_categories[0].getName())) {
             return popDeck.getNextQuestion();
         }
-        if (category.equals(categories[1])) {
+        if (category.equals(temp_categories[1].getName())) {
             return scienceDeck.getNextQuestion();
         }
-        if (category.equals(categories[2])) {
+        if (category.equals(temp_categories[2].getName())) {
             return sportsDeck.getNextQuestion();
         }
-        if (category.equals(categories[3])) {
+        if (category.equals(temp_categories[3].getName())) {
             return rockDeck.getNextQuestion();
         }
         throw new Error("");
