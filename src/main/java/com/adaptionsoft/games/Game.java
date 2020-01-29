@@ -67,9 +67,6 @@ public class Game {
     private void movePlayerAndAskQuestion(int roll) {
         movePlayer(roll);
 
-        System.out.println(getCurrentPlayerName()
-                + "'s new location is "
-                + getCurrentPlace());
         System.out.println("The category is " + currentCategory());
         askQuestion();
     }
