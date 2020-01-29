@@ -44,4 +44,8 @@ public class Player {
 
         System.out.println(name + " was sent to the penalty box");
     }
+
+    public void gettingOutOfPenaltyBox() {
+        System.out.println(name + " is getting out of the penalty box");
+    }
 }
