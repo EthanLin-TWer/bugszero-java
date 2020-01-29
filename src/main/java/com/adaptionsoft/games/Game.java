@@ -67,13 +67,13 @@ public class Game {
 
         System.out.println("The category is " + category);
 
-        if (category.equals("Pop"))
+        if (category.equals(categories[0]))
             System.out.println(popQuestions.removeFirst());
-        if (category.equals("Science"))
+        if (category.equals(categories[1]))
             System.out.println(scienceQuestions.removeFirst());
-        if (category.equals("Sports"))
+        if (category.equals(categories[2]))
             System.out.println(sportsQuestions.removeFirst());
-        if (category.equals("Rock"))
+        if (category.equals(categories[3]))
             System.out.println(rockQuestions.removeFirst());
     }
 
