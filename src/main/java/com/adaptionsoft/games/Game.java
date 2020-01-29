@@ -80,6 +80,8 @@ public class Game {
         places[currentPlayer] = getCurrentPlace() + roll;
         if (getCurrentPlace() > 11)
             places[currentPlayer] = getCurrentPlace() - 12;
+
+        players.get(currentPlayer).moveForward(roll);
     }
 
     private void askQuestion() {
