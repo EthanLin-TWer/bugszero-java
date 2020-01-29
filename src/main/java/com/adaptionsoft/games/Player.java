@@ -4,6 +4,7 @@ public class Player {
     private final String name;
     private int goldCoins = 0;
     private int place = 0;
+    private boolean isInPenaltyBox = false;
 
     public Player(String name) {
         this.name = name;
@@ -13,16 +14,16 @@ public class Player {
         return name;
     }
 
-    public void increaseGoldCoin() {
-        goldCoins += 1;
-    }
-
     public int getGoldCoins() {
         return goldCoins;
     }
 
     public int getPlace() {
         return place;
+    }
+
+    public void increaseGoldCoin() {
+        goldCoins += 1;
     }
 
     public void moveForward(int roll) {
