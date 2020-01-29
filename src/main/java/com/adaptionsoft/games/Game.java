@@ -77,10 +77,6 @@ public class Game {
     }
 
     private void movePlayer(int roll) {
-        places[currentPlayer] = getCurrentPlace() + roll;
-        if (getCurrentPlace() > 11)
-            places[currentPlayer] = getCurrentPlace() - 12;
-
         players.get(currentPlayer).moveForward(roll);
     }
 
