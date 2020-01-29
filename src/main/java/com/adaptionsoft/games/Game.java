@@ -91,13 +91,13 @@ public class Game {
         if (isCurrentPlayerInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
-                setNextPlayer();
                 getCurrentPlayer().increaseGoldCoin();
                 System.out.println(getCurrentPlayerName()
                         + " now has "
                         + getCurrentGoldCoins()
                         + " Gold Coins.");
 
+                setNextPlayer();
                 return didPlayerWin();
             } else {
                 setNextPlayer();
