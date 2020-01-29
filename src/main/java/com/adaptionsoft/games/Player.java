@@ -34,4 +34,8 @@ public class Player {
 
         System.out.println(name + "'s new location is " + place);
     }
+
+    public void sentToPenaltyBox() {
+        isInPenaltyBox = true;
+    }
 }

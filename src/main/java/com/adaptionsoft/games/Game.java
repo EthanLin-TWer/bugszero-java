@@ -132,6 +132,7 @@ public class Game {
         System.out.println("Question was incorrectly answered");
         System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
         inPenaltyBox[currentPlayer] = true;
+        players.get(currentPlayer).sentToPenaltyBox();
 
         currentPlayer++;
         if (currentPlayer == players.size()) currentPlayer = 0;
