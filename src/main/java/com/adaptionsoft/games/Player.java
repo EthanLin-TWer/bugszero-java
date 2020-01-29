@@ -22,6 +22,10 @@ public class Player {
         return place;
     }
 
+    public boolean isInPenaltyBox() {
+        return isInPenaltyBox;
+    }
+
     public void increaseGoldCoin() {
         goldCoins += 1;
     }

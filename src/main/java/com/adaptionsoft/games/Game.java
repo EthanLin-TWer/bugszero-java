@@ -152,6 +152,6 @@ public class Game {
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
-        return inPenaltyBox[currentPlayer];
+        return players.get(currentPlayer).isInPenaltyBox();
     }
 }
