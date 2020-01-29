@@ -22,9 +22,8 @@ public class Game {
     }
 
     private void initPopQuestions() {
-        for (int i = 0; i < 50; i++) {
-            popQuestions.addLast("Pop Question " + i);
-        }
+        final Deck deck = new Deck();
+        popQuestions = deck.popQuestions;
     }
 
     public boolean add(String playerName) {
