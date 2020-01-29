@@ -67,7 +67,7 @@ public class Game {
     }
 
     private Object getCurrentPlayerName() {
-        return players.get(currentPlayer);
+        return temp_players.get(currentPlayer).getName();
     }
 
     private void movePlayerAndAskQuestion(int roll) {
