@@ -20,7 +20,7 @@ public class DecksManager {
         System.out.println("The category is " + category);
 
         if (category.equals(categories[0].getName())) {
-            return popDeck.getNextQuestion();
+            return categoryDecks.get(Category.POP).getNextQuestion();
         }
         if (category.equals(categories[1].getName())) {
             return scienceDeck.getNextQuestion();
