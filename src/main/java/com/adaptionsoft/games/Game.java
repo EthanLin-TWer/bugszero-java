@@ -54,8 +54,11 @@ public class Game {
 
         System.out.println("The category is " + category);
 
-        if (category.equals(categories[0]))
-            System.out.println(popDeck.getNextQuestion());
+        String question;
+        if (category.equals(categories[0])) {
+            question = popDeck.getNextQuestion();
+            System.out.println(question);
+        }
         if (category.equals(categories[1]))
             System.out.println(scienceDeck.getNextQuestion());
         if (category.equals(categories[2]))
