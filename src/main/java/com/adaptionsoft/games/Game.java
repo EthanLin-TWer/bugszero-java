@@ -135,7 +135,7 @@ public class Game {
     }
 
     private boolean didPlayerWin() {
-        return !(getCurrentGoldCoins() == 6);
+        return getCurrentGoldCoins() != 6;
     }
 
     private int getCurrentPlace() {
