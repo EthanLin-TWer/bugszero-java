@@ -93,7 +93,7 @@ public class Game {
         }
 
         answeredCorrect();
-        return didPlayerWin();
+        return !didPlayerWin();
     }
 
     private void answeredCorrect() {
@@ -111,12 +111,11 @@ public class Game {
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         getCurrentPlayer().sentToPenaltyBox();
-
         return true;
     }
 
     private boolean didPlayerWin() {
-        return getCurrentGoldCoins() != 6;
+        return getCurrentGoldCoins() == 6;
     }
 
     private int getCurrentPlace() {
