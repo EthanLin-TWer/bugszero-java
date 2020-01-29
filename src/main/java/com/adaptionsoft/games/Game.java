@@ -90,27 +90,24 @@ public class Game {
     public boolean wasCorrectlyAnswered() {
         if (isCurrentPlayerInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox) {
-                System.out.println("Answer was correct!!!!");
-                getCurrentPlayer().increaseGoldCoin();
-                System.out.println(getCurrentPlayerName()
-                        + " now has "
-                        + getCurrentGoldCoins()
-                        + " Gold Coins.");
-
-                return didPlayerWin();
+                return answeredCorrect();
             } else {
                 return true;
             }
         } else {
-            System.out.println("Answer was correct!!!!");
-            getCurrentPlayer().increaseGoldCoin();
-            System.out.println(getCurrentPlayerName()
-                    + " now has "
-                    + getCurrentGoldCoins()
-                    + " Gold Coins.");
-
-            return didPlayerWin();
+            return answeredCorrect();
         }
+    }
+
+    private boolean answeredCorrect() {
+        System.out.println("Answer was correct!!!!");
+        getCurrentPlayer().increaseGoldCoin();
+        System.out.println(getCurrentPlayerName()
+                + " now has "
+                + getCurrentGoldCoins()
+                + " Gold Coins.");
+
+        return didPlayerWin();
     }
 
     public void setNextPlayer() {
