@@ -46,7 +46,6 @@ public class Game {
                 return false;
             } else {
                 System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
-                isGettingOutOfPenaltyBox = false;
                 return true;
             }
         } else {
