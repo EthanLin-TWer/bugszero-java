@@ -19,12 +19,12 @@ public class DecksManager {
     public String getNextQuestion(int place) {
         Category[] categories = Category.values();
         final Category typedCategory = categories[place % categories.length];
-        String category = typedCategory.getName();
 
-        System.out.println("The category is " + category);
+        System.out.println("The category is " + typedCategory.getName());
 
         if (typedCategory.equals(categories[0])) {
             return categoryDecks.get(Category.POP).getNextQuestion();
+
         }
         if (typedCategory.equals(categories[1])) {
             return categoryDecks.get(Category.SCIENCE).getNextQuestion();
