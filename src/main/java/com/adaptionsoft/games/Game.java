@@ -75,11 +75,11 @@ public class Game {
     }
 
     private String currentCategory() {
-        String[] categories = new String[]{ "Pop" };
+        String[] categories = new String[]{ "Pop", "Science" };
         if (getCurrentPlace() == 0) return categories[0];
-        if (getCurrentPlace() == 4) return "Pop";
-        if (getCurrentPlace() == 8) return "Pop";
-        if (getCurrentPlace() == 1) return "Science";
+        if (getCurrentPlace() == 4) return categories[0];
+        if (getCurrentPlace() == 8) return categories[0];
+        if (getCurrentPlace() == 1) return categories[1];
         if (getCurrentPlace() == 5) return "Science";
         if (getCurrentPlace() == 9) return "Science";
         if (getCurrentPlace() == 2) return "Sports";
