@@ -19,11 +19,14 @@ public class GameRunner {
 
 		do {
 			boolean isStillInPenaltyBox = aGame.roll(rand.nextInt(5) + 1);
+			final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
-			if (rand.nextInt(9) == 7) {
-				notAWinner = aGame.wrongAnswer();
-			} else {
-				notAWinner = aGame.wasCorrectlyAnswered();
+			if (!isStillInPenaltyBox) {
+				if (isWrongAnswer) {
+					notAWinner = aGame.wrongAnswer();
+				} else {
+					notAWinner = aGame.wasCorrectlyAnswered();
+				}
 			}
 			aGame.setNextPlayer();
 		} while (notAWinner);
