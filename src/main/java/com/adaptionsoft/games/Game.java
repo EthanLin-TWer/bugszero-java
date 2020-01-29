@@ -98,10 +98,8 @@ public class Game {
                         + " Gold Coins.");
 
                 boolean winner = didPlayerWin();
-                setNextPlayer();
                 return winner;
             } else {
-                setNextPlayer();
                 return true;
             }
         } else {
@@ -113,12 +111,11 @@ public class Game {
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
-            setNextPlayer();
             return winner;
         }
     }
 
-    private void setNextPlayer() {
+    public void setNextPlayer() {
         currentPlayer++;
         if (currentPlayer == players.size()) {
             currentPlayer = 0;
