@@ -39,12 +39,12 @@ public class Game {
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
-        System.out.println("They are player number " + players.size());
+        System.out.println("They are player number " + temp_players.size());
         return true;
     }
 
     public int howManyPlayers() {
-        return players.size();
+        return temp_players.size();
     }
 
     public void roll(int roll) {
@@ -107,7 +107,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == temp_players.size()) currentPlayer = 0;
                 goldCoins[currentPlayer]++;
                 System.out.println(players.get(currentPlayer)
                         + " now has "
@@ -117,7 +117,7 @@ public class Game {
                 return didPlayerWin();
             } else {
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == temp_players.size()) currentPlayer = 0;
                 return true;
             }
         } else {
@@ -130,7 +130,7 @@ public class Game {
 
             boolean winner = didPlayerWin();
             currentPlayer++;
-            if (currentPlayer == players.size()) currentPlayer = 0;
+            if (currentPlayer == temp_players.size()) currentPlayer = 0;
             return winner;
         }
     }
@@ -141,7 +141,7 @@ public class Game {
         inPenaltyBox[currentPlayer] = true;
 
         currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
+        if (currentPlayer == temp_players.size()) currentPlayer = 0;
         return true;
     }
 
