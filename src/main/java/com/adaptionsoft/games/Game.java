@@ -1,7 +1,6 @@
 package com.adaptionsoft.games;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Game {
     final Deck popDeck = new Deck("Pop");
@@ -49,12 +48,11 @@ public class Game {
     }
 
     private void askQuestion() {
-        String question = getNextQuestion();
+        String question = getNextQuestion(getCurrentPlace());
         System.out.println(question);
     }
 
-    private String getNextQuestion() {
-        final int place = getCurrentPlace();
+    private String getNextQuestion(int place) {
         String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
         String category = categories[place % 4];
 
