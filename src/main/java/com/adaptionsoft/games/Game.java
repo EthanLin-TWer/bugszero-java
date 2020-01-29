@@ -54,17 +54,23 @@ public class Game {
 
         System.out.println("The category is " + category);
 
-        String question;
+        String question = null;
         if (category.equals(categories[0])) {
             question = popDeck.getNextQuestion();
             System.out.println(question);
         }
-        if (category.equals(categories[1]))
-            System.out.println(scienceDeck.getNextQuestion());
-        if (category.equals(categories[2]))
-            System.out.println(sportsDeck.getNextQuestion());
-        if (category.equals(categories[3]))
-            System.out.println(rockDeck.getNextQuestion());
+        if (category.equals(categories[1])) {
+            question = scienceDeck.getNextQuestion();
+            System.out.println(question);
+        }
+        if (category.equals(categories[2])) {
+            question = sportsDeck.getNextQuestion();
+            System.out.println(question);
+        }
+        if (category.equals(categories[3])) {
+            question = rockDeck.getNextQuestion();
+            System.out.println(question);
+        }
     }
 
     public boolean wasCorrectlyAnswered() {
