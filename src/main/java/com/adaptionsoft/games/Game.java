@@ -18,6 +18,10 @@ public class Game {
             sportsQuestions.addLast("Sports Question " + i);
             rockQuestions.addLast("Rock Question " + i);
         }
+        initPopQuestions();
+    }
+
+    private void initPopQuestions() {
         for (int i = 0; i < 50; i++) {
             popQuestions.addLast("Pop Question " + i);
         }
