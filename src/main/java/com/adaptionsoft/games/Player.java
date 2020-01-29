@@ -21,6 +21,10 @@ public class Player {
         return goldCoins;
     }
 
+    public int getPlace() {
+        return place;
+    }
+
     public void moveForward(int roll) {
         place += roll;
         if (place > 11)

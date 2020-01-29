@@ -156,7 +156,7 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return places[currentPlayer];
+        return players.get(currentPlayer).getPlace();
     }
 
     private int getCurrentGoldCoins() {
