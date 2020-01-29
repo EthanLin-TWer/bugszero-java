@@ -97,8 +97,9 @@ public class Game {
                         + getCurrentGoldCoins()
                         + " Gold Coins.");
 
+                boolean winner = didPlayerWin();
                 setNextPlayer();
-                return didPlayerWin();
+                return winner;
             } else {
                 setNextPlayer();
                 return true;
