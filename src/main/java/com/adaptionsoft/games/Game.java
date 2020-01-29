@@ -9,6 +9,7 @@ public class Game {
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
 
+    final Deck deck = new Deck();
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
 
@@ -22,7 +23,6 @@ public class Game {
     }
 
     private void initPopQuestions() {
-        final Deck deck = new Deck();
         popQuestions = deck.popQuestions;
     }
 
