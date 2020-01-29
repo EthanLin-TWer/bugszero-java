@@ -3,7 +3,8 @@ package com.adaptionsoft.games;
 public enum Category {
     POP("Pop"),
     SCIENCE("Science"),
-    SPORTS("Sports");
+    SPORTS("Sports"),
+    ROCK("Rock");
 
     private final String name;
     Category(String name) {
