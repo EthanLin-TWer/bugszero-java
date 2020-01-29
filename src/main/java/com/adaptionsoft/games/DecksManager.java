@@ -22,19 +22,6 @@ public class DecksManager {
 
         System.out.println("The category is " + category.getName());
 
-        if (category.equals(categories[0])) {
-            return categoryDecks.get(Category.POP).getNextQuestion();
-
-        }
-        if (category.equals(categories[1])) {
-            return categoryDecks.get(Category.SCIENCE).getNextQuestion();
-        }
-        if (category.equals(categories[2])) {
-            return categoryDecks.get(Category.SPORTS).getNextQuestion();
-        }
-        if (category.equals(categories[3])) {
-            return categoryDecks.get(Category.ROCK).getNextQuestion();
-        }
-        throw new Error("");
+        return categoryDecks.get(category).getNextQuestion();
     }
 }
