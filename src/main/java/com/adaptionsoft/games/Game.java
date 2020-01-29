@@ -49,6 +49,11 @@ public class Game {
     }
 
     private void askQuestion() {
+        String question = getNextQuestion();
+        System.out.println(question);
+    }
+
+    private String getNextQuestion() {
         String[] categories = new String[]{ Category.POP.getName(), Category.SCIENCE.getName(), Category.SPORTS.getName(), Category.ROCK.getName() };
         String category = categories[getCurrentPlace() % 4];
 
@@ -67,7 +72,7 @@ public class Game {
         if (category.equals(categories[3])) {
             question = rockDeck.getNextQuestion();
         }
-        System.out.println(question);
+        return question;
     }
 
     public boolean wasCorrectlyAnswered() {
