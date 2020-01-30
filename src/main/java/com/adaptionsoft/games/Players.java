@@ -9,4 +9,8 @@ public class Players {
         players.add(player);
         System.out.println("They are player number " + this.players.size());
     }
+
+    public int size() {
+        return players.size();
+    }
 }

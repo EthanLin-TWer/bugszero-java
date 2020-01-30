@@ -63,7 +63,7 @@ public class Game {
 
     public void setNextPlayer() {
         currentPlayer++;
-        if (currentPlayer == players.size()) {
+        if (currentPlayer == temp_players.size()) {
             currentPlayer = 0;
         }
     }
