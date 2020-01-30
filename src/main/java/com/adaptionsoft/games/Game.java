@@ -3,11 +3,11 @@ package com.adaptionsoft.games;
 public class Game {
     int currentPlayer = 0;
     private final DecksManager decksManager = new DecksManager();
-    private final Players temp_players = new Players();
+    private final Players players = new Players();
 
     public void add(String playerName) {
         final Player player = new Player(playerName);
-        temp_players.add(player);
+        players.add(player);
     }
 
     public boolean roll(int roll) {
@@ -59,7 +59,7 @@ public class Game {
 
     public void setNextPlayer() {
         currentPlayer++;
-        if (currentPlayer == temp_players.size()) {
+        if (currentPlayer == players.size()) {
             currentPlayer = 0;
         }
     }
@@ -87,6 +87,6 @@ public class Game {
     }
 
     private Player getCurrentPlayer() {
-        return temp_players.get(currentPlayer);
+        return players.get(currentPlayer);
     }
 }
