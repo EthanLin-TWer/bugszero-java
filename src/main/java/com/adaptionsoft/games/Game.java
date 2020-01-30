@@ -15,7 +15,7 @@ public class Game {
 
         if (isCurrentPlayerInPenaltyBox()) {
             if (roll % 2 != 0) {
-                getCurrentPlayer().gettingOutOfPenaltyBox();
+                players.getCurrentPlayer().gettingOutOfPenaltyBox();
                 movePlayerAndAskQuestion(roll);
                 return false;
             } else {
@@ -29,11 +29,11 @@ public class Game {
     }
 
     private Object getCurrentPlayerName() {
-        return getCurrentPlayer().getName();
+        return players.getCurrentPlayer().getName();
     }
 
     private void movePlayerAndAskQuestion(int roll) {
-        getCurrentPlayer().moveForward(roll);
+        players.getCurrentPlayer().moveForward(roll);
         askQuestion();
     }
 
@@ -53,7 +53,7 @@ public class Game {
 
     private void answeredCorrect() {
         System.out.println("Answer was correct!!!!");
-        getCurrentPlayer().increaseGoldCoin();
+        players.getCurrentPlayer().increaseGoldCoin();
     }
 
     public void setNextPlayer() {
@@ -62,7 +62,7 @@ public class Game {
 
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        getCurrentPlayer().sentToPenaltyBox();
+        players.getCurrentPlayer().sentToPenaltyBox();
         return true;
     }
 
@@ -71,18 +71,14 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return getCurrentPlayer().getPlace();
+        return players.getCurrentPlayer().getPlace();
     }
 
     private int getCurrentGoldCoins() {
-        return getCurrentPlayer().getGoldCoins();
+        return players.getCurrentPlayer().getGoldCoins();
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
-        return getCurrentPlayer().isInPenaltyBox();
-    }
-
-    private Player getCurrentPlayer() {
-        return players.getCurrentPlayer();
+        return players.getCurrentPlayer().isInPenaltyBox();
     }
 }
