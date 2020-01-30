@@ -9,6 +9,10 @@ public class Game {
         players.add(player);
     }
 
+    public boolean shouldCurrentPlayerAnswerQuestion() {
+        return !players.getCurrentPlayer().isInPenaltyBox();
+    }
+
     public boolean roll(int roll) {
         System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);

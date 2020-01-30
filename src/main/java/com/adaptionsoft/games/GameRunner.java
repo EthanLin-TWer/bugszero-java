@@ -21,7 +21,7 @@ public class GameRunner {
 			boolean isStillInPenaltyBox = aGame.roll(rand.nextInt(5) + 1);
 			final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
-			if (!isStillInPenaltyBox) {
+			if (aGame.shouldCurrentPlayerAnswerQuestion()) {
 				if (isWrongAnswer) {
 					notAWinner = aGame.wrongAnswer();
 				} else {
