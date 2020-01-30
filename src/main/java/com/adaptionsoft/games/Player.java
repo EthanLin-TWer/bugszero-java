@@ -8,6 +8,8 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
+
+        System.out.println(name + " was added");
     }
 
     public String getName() {

@@ -10,7 +10,6 @@ public class Game {
     public boolean add(String playerName) {
         players.add(new Player(playerName));
 
-        System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
         return true;
     }
