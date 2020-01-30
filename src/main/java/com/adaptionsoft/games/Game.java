@@ -62,6 +62,7 @@ public class Game {
         if (currentPlayer == players.size()) {
             currentPlayer = 0;
         }
+        players.updateCurrentPlayer(currentPlayer);
     }
 
     public boolean wrongAnswer() {
