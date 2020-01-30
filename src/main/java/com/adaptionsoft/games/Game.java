@@ -38,7 +38,9 @@ public class Game {
     }
 
     private void askQuestion() {
-        String question = decksManager.getNextQuestion(getCurrentPlace());
+        final int place = players.getCurrentPlayer().getPlace();
+        String question = decksManager.getNextQuestion(place);
+
         System.out.println(question);
     }
 
@@ -68,10 +70,6 @@ public class Game {
 
     private boolean didPlayerWin() {
         return getCurrentGoldCoins() == 6;
-    }
-
-    private int getCurrentPlace() {
-        return players.getCurrentPlayer().getPlace();
     }
 
     private int getCurrentGoldCoins() {
