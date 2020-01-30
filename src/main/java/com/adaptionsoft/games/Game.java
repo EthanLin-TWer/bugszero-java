@@ -19,7 +19,7 @@ public class Game {
                 movePlayerAndAskQuestion(roll);
                 return false;
             } else {
-                System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
+                players.getCurrentPlayer().stayInPenaltyBox();
                 return true;
             }
         } else {
