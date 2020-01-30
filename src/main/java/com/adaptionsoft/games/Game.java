@@ -14,7 +14,7 @@ public class Game {
     }
 
     public void roll(int roll) {
-        System.out.println(getCurrentPlayerName() + " is the current player");
+        System.out.println(players.getCurrentPlayer().getName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
         if (!isCurrentPlayerInPenaltyBox()) {
@@ -33,10 +33,6 @@ public class Game {
 
     private boolean isOdd(int number) {
         return number % 2 != 0;
-    }
-
-    private Object getCurrentPlayerName() {
-        return players.getCurrentPlayer().getName();
     }
 
     private void movePlayerAndAskQuestion(int roll) {
