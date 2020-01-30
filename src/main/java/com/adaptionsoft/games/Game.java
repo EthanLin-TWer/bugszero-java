@@ -88,6 +88,6 @@ public class Game {
     }
 
     private Player getCurrentPlayer() {
-        return players.get(currentPlayer);
+        return players.get(players.currentPlayer);
     }
 }
