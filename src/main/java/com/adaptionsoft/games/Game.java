@@ -6,10 +6,12 @@ public class Game {
     int currentPlayer = 0;
     private final ArrayList<Player> players = new ArrayList<>();
     private final DecksManager decksManager = new DecksManager();
+    private final Players temp_players = new Players();
 
     public void add(String playerName) {
-        players.add(new Player(playerName));
-        System.out.println("They are player number " + players.size());
+        final Player player = new Player(playerName);
+        players.add(player);
+        System.out.println("They are player number " + this.players.size());
     }
 
     public boolean roll(int roll) {
