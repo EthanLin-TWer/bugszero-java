@@ -17,20 +17,22 @@ public class Game {
         System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
-        if (isCurrentPlayerInPenaltyBox()) {
-            if (isOdd(roll)) {
-                players.getCurrentPlayer().gettingOutOfPenaltyBox();
-                movePlayerAndAskQuestion(roll);
-            } else {
-                players.getCurrentPlayer().stayInPenaltyBox();
-            }
-        } else {
+        if (!isCurrentPlayerInPenaltyBox()) {
             movePlayerAndAskQuestion(roll);
+            return;
         }
+
+        if (isOdd(roll)) {
+            players.getCurrentPlayer().gettingOutOfPenaltyBox();
+            movePlayerAndAskQuestion(roll);
+            return;
+        }
+
+        players.getCurrentPlayer().stayInPenaltyBox();
     }
 
-    private boolean isOdd(int roll) {
-        return roll % 2 != 0;
+    private boolean isOdd(int number) {
+        return number % 2 != 0;
     }
 
     private Object getCurrentPlayerName() {
