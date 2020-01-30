@@ -76,10 +76,9 @@ public class Game {
         players.getCurrentPlayer().increaseGoldCoin();
     }
 
-    private boolean wrongAnswer() {
+    private void wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         players.getCurrentPlayer().sentToPenaltyBox();
-        return true;
     }
 
     private boolean didPlayerWin() {
