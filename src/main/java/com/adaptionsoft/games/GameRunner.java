@@ -15,23 +15,7 @@ public class GameRunner {
 		aGame.add("Pat");
 		aGame.add("Sue");
 
-		start(rand, aGame);
+		aGame.start(rand);
 	}
 
-	private static void start(Random rand, Game aGame) {
-		boolean notAWinner = true;
-		do {
-			aGame.roll(rand.nextInt(5) + 1);
-			final boolean isWrongAnswer = rand.nextInt(9) == 7;
-
-			if (aGame.shouldCurrentPlayerAnswerQuestion()) {
-				if (isWrongAnswer) {
-					notAWinner = aGame.wrongAnswer();
-				} else {
-					notAWinner = aGame.wasCorrectlyAnswered();
-				}
-			}
-			aGame.setNextPlayer();
-		} while (notAWinner);
-	}
 }

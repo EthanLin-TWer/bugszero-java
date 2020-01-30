@@ -1,8 +1,27 @@
 package com.adaptionsoft.games;
 
+import java.util.Random;
+
 public class Game {
     private final DecksManager decksManager = new DecksManager();
     private final Players players = new Players();
+
+    void start(Random rand) {
+        boolean notAWinner = true;
+        do {
+            roll(rand.nextInt(5) + 1);
+            final boolean isWrongAnswer = rand.nextInt(9) == 7;
+
+            if (shouldCurrentPlayerAnswerQuestion()) {
+                if (isWrongAnswer) {
+                    notAWinner = wrongAnswer();
+                } else {
+                    notAWinner = wasCorrectlyAnswered();
+                }
+            }
+            setNextPlayer();
+        } while (notAWinner);
+    }
 
     public void add(String playerName) {
         final Player player = new Player(playerName);
