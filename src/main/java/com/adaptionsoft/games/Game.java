@@ -7,11 +7,9 @@ public class Game {
     private final ArrayList<Player> players = new ArrayList<>();
     private final DecksManager decksManager = new DecksManager();
 
-    public boolean add(String playerName) {
+    public void add(String playerName) {
         players.add(new Player(playerName));
-
         System.out.println("They are player number " + players.size());
-        return true;
     }
 
     public boolean roll(int roll) {
