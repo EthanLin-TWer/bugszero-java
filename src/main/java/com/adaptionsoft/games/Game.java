@@ -18,7 +18,7 @@ public class Game {
         System.out.println("They have rolled a " + roll);
 
         if (isCurrentPlayerInPenaltyBox()) {
-            if (roll % 2 != 0) {
+            if (isOdd(roll)) {
                 players.getCurrentPlayer().gettingOutOfPenaltyBox();
                 movePlayerAndAskQuestion(roll);
             } else {
@@ -27,6 +27,10 @@ public class Game {
         } else {
             movePlayerAndAskQuestion(roll);
         }
+    }
+
+    private boolean isOdd(int roll) {
+        return roll % 2 != 0;
     }
 
     private Object getCurrentPlayerName() {
