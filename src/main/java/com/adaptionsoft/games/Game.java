@@ -13,7 +13,12 @@ public class Game {
             final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
             if (!players.getCurrentPlayer().isInPenaltyBox()) {
-                notAWinner = isWrongAnswer ? wrongAnswer() : correctAnswer();
+                if (isWrongAnswer) {
+                    wrongAnswer();
+                } else {
+                    correctAnswer();
+                }
+                notAWinner = !didPlayerWin();
             }
             players.setNextPlayer();
         } while (notAWinner);
