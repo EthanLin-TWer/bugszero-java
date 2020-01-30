@@ -58,7 +58,7 @@ public class Game {
     }
 
     public void setNextPlayer() {
-        players.updateCurrentPlayer();
+        players.setNextPlayer();
     }
 
     public boolean wrongAnswer() {

@@ -11,7 +11,7 @@ public class Players {
         System.out.println("They are player number " + this.players.size());
     }
 
-    public void updateCurrentPlayer() {
+    public void setNextPlayer() {
         currentPlayer++;
         if (currentPlayer == players.size()) {
             currentPlayer = 0;
