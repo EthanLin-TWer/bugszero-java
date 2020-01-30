@@ -28,11 +28,11 @@ public class Game {
         players.add(player);
     }
 
-    public boolean shouldCurrentPlayerAnswerQuestion() {
+    private boolean shouldCurrentPlayerAnswerQuestion() {
         return !players.getCurrentPlayer().isInPenaltyBox();
     }
 
-    public void roll(int roll) {
+    private void roll(int roll) {
         System.out.println(players.getCurrentPlayer().getName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
@@ -66,7 +66,7 @@ public class Game {
         System.out.println(question);
     }
 
-    public boolean wasCorrectlyAnswered() {
+    private boolean wasCorrectlyAnswered() {
         if (isCurrentPlayerInPenaltyBox()) {
             return true;
         }
@@ -80,11 +80,11 @@ public class Game {
         players.getCurrentPlayer().increaseGoldCoin();
     }
 
-    public void setNextPlayer() {
+    private void setNextPlayer() {
         players.setNextPlayer();
     }
 
-    public boolean wrongAnswer() {
+    private boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         players.getCurrentPlayer().sentToPenaltyBox();
         return true;
