@@ -21,8 +21,4 @@ public class Players {
     public Player getCurrentPlayer() {
         return players.get(currentPlayer);
     }
-
-    public int size() {
-        return players.size();
-    }
 }
