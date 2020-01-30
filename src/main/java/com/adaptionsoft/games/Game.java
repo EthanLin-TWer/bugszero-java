@@ -58,11 +58,7 @@ public class Game {
     }
 
     public void setNextPlayer() {
-        currentPlayer++;
-        if (currentPlayer == players.size()) {
-            currentPlayer = 0;
-        }
-        players.updateCurrentPlayer(currentPlayer);
+        players.updateCurrentPlayer();
     }
 
     public boolean wrongAnswer() {
