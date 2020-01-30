@@ -4,7 +4,8 @@ public enum Category {
     POP("Pop"),
     SCIENCE("Science"),
     SPORTS("Sports"),
-    ROCK("Rock");
+    ROCK("Rock"),
+    BLUES("Blues");
 
     private final String name;
     Category(String name) {
