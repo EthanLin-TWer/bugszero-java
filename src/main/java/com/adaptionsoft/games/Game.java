@@ -1,16 +1,12 @@
 package com.adaptionsoft.games;
 
-import java.util.ArrayList;
-
 public class Game {
     int currentPlayer = 0;
-    private final ArrayList<Player> players = new ArrayList<>();
     private final DecksManager decksManager = new DecksManager();
     private final Players temp_players = new Players();
 
     public void add(String playerName) {
         final Player player = new Player(playerName);
-        players.add(player);
         temp_players.add(player);
     }
 
