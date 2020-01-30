@@ -15,10 +15,6 @@ public class Players {
         currentPlayer = value;
     }
 
-    public Player get(int index) {
-        return players.get(index);
-    }
-
     public Player getCurrentPlayer() {
         return players.get(currentPlayer);
     }
