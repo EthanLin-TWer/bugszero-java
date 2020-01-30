@@ -1,5 +1,7 @@
 package com.adaptionsoft.games;
 
+import jdk.nashorn.api.tree.ForOfLoopTree;
+
 import java.util.HashMap;
 
 public class DecksManager {
@@ -10,10 +12,9 @@ public class DecksManager {
     final HashMap<Category, Deck> categoryDecks = new HashMap<>();
 
     public DecksManager() {
-        categoryDecks.put(Category.POP, popDeck);
-        categoryDecks.put(Category.SCIENCE, scienceDeck);
-        categoryDecks.put(Category.SPORTS, sportsDeck);
-        categoryDecks.put(Category.ROCK, rockDeck);
+        for (Category category: Category.values()) {
+            categoryDecks.put(category, new Deck(category));
+        }
     }
 
     public String getNextQuestion(int place) {
