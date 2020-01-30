@@ -20,8 +20,7 @@ public class Game {
     }
 
     public void add(String playerName) {
-        final Player player = new Player(playerName);
-        players.add(player);
+        players.add(new Player(playerName));
     }
 
     private boolean shouldCurrentPlayerAnswerQuestion() {
