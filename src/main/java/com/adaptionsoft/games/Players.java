@@ -10,6 +10,10 @@ public class Players {
         System.out.println("They are player number " + this.players.size());
     }
 
+    public Player get(int index) {
+        return players.get(index);
+    }
+
     public int size() {
         return players.size();
     }

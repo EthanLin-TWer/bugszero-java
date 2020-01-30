@@ -91,6 +91,6 @@ public class Game {
     }
 
     private Player getCurrentPlayer() {
-        return players.get(currentPlayer);
+        return temp_players.get(currentPlayer);
     }
 }
