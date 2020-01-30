@@ -63,10 +63,6 @@ public class Game {
     }
 
     private void correctAnswer() {
-        answeredCorrect();
-    }
-
-    private void answeredCorrect() {
         System.out.println("Answer was correct!!!!");
         players.getCurrentPlayer().increaseGoldCoin();
     }
