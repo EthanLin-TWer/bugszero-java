@@ -18,7 +18,7 @@ public class GameRunner {
 		aGame.add("Sue");
 
 		do {
-			boolean isStillInPenaltyBox = aGame.roll(rand.nextInt(5) + 1);
+			aGame.roll(rand.nextInt(5) + 1);
 			final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
 			if (aGame.shouldCurrentPlayerAnswerQuestion()) {

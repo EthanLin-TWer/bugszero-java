@@ -13,7 +13,7 @@ public class Game {
         return !players.getCurrentPlayer().isInPenaltyBox();
     }
 
-    public boolean roll(int roll) {
+    public void roll(int roll) {
         System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
@@ -21,14 +21,11 @@ public class Game {
             if (roll % 2 != 0) {
                 players.getCurrentPlayer().gettingOutOfPenaltyBox();
                 movePlayerAndAskQuestion(roll);
-                return false;
             } else {
                 players.getCurrentPlayer().stayInPenaltyBox();
-                return true;
             }
         } else {
             movePlayerAndAskQuestion(roll);
-            return false;
         }
     }
 
