@@ -7,5 +7,6 @@ public class Players {
 
     public void add(Player player) {
         players.add(player);
+        System.out.println("They are player number " + this.players.size());
     }
 }

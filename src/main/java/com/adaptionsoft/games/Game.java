@@ -12,7 +12,6 @@ public class Game {
         final Player player = new Player(playerName);
         players.add(player);
         temp_players.add(player);
-        System.out.println("They are player number " + this.players.size());
     }
 
     public boolean roll(int roll) {
