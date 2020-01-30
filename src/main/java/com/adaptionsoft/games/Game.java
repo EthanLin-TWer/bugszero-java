@@ -19,7 +19,7 @@ public class Game {
                     notAWinner = wasCorrectlyAnswered();
                 }
             }
-            setNextPlayer();
+            players.setNextPlayer();
         } while (notAWinner);
     }
 
@@ -78,10 +78,6 @@ public class Game {
     private void answeredCorrect() {
         System.out.println("Answer was correct!!!!");
         players.getCurrentPlayer().increaseGoldCoin();
-    }
-
-    private void setNextPlayer() {
-        players.setNextPlayer();
     }
 
     private boolean wrongAnswer() {
