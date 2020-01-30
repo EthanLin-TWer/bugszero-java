@@ -12,7 +12,7 @@ public class Game {
             roll(rand.nextInt(5) + 1);
             final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
-            if (shouldCurrentPlayerAnswerQuestion()) {
+            if (!players.getCurrentPlayer().isInPenaltyBox()) {
                 notAWinner = isWrongAnswer ? wrongAnswer() : correctAnswer();
             }
             players.setNextPlayer();
@@ -21,10 +21,6 @@ public class Game {
 
     public void add(String playerName) {
         players.add(new Player(playerName));
-    }
-
-    private boolean shouldCurrentPlayerAnswerQuestion() {
-        return !players.getCurrentPlayer().isInPenaltyBox();
     }
 
     private void roll(int roll) {
