@@ -1,7 +1,6 @@
 package com.adaptionsoft.games;
 
 public class Game {
-    int currentPlayer = 0;
     private final DecksManager decksManager = new DecksManager();
     private final Players players = new Players();
 
