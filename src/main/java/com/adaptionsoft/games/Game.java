@@ -62,13 +62,8 @@ public class Game {
         System.out.println(question);
     }
 
-    private boolean correctAnswer() {
-        if (isCurrentPlayerInPenaltyBox()) {
-            return true;
-        }
-
+    private void correctAnswer() {
         answeredCorrect();
-        return !didPlayerWin();
     }
 
     private void answeredCorrect() {
