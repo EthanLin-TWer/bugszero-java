@@ -13,11 +13,7 @@ public class Game {
             final boolean isWrongAnswer = rand.nextInt(9) == 7;
 
             if (shouldCurrentPlayerAnswerQuestion()) {
-                if (isWrongAnswer) {
-                    notAWinner = wrongAnswer();
-                } else {
-                    notAWinner = wasCorrectlyAnswered();
-                }
+                notAWinner = isWrongAnswer ? wrongAnswer() : correctAnswer();
             }
             players.setNextPlayer();
         } while (notAWinner);
@@ -66,7 +62,7 @@ public class Game {
         System.out.println(question);
     }
 
-    private boolean wasCorrectlyAnswered() {
+    private boolean correctAnswer() {
         if (isCurrentPlayerInPenaltyBox()) {
             return true;
         }
