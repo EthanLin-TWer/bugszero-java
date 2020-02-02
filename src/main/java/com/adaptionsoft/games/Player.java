@@ -32,4 +32,8 @@ public class Player {
         goldCoin++;
         System.out.println(name + " now has " + goldCoin + " Gold Coins.");
     }
+
+    public boolean isWin() {
+        return goldCoin >= 6;
+    }
 }
