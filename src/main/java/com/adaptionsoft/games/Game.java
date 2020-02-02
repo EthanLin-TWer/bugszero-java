@@ -156,7 +156,7 @@ public class Game {
     }
 
     private String getCurrentPlayer() {
-        return players.get(currentPlayer);
+        return tempPlayers.get(currentPlayer).getName();
     }
 
 
