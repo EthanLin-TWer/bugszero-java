@@ -23,6 +23,11 @@ public class Game {
             sportsQuestions.addLast(("Sports Question " + i));
             rockQuestions.addLast(createRockQuestion(i));
         }
+
+        questionMap.put(Category.POP, popQuestions);
+        questionMap.put(Category.SCIENCE, scienceQuestions);
+        questionMap.put(Category.SPORTS, scienceQuestions);
+        questionMap.put(Category.ROCK, rockQuestions);
     }
 
     public String createRockQuestion(int index) {
