@@ -88,21 +88,17 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 nextPlayer();
-                gainGoldCoin();
-
+                tempPlayers.get(currentPlayer).gainGoldCoin();
                 return didPlayerWin();
             } else {
                 nextPlayer();
                 return true;
             }
         } else {
-
             System.out.println("Answer was correct!!!!");
-            gainGoldCoin();
-
+            tempPlayers.get(currentPlayer).gainGoldCoin();
             boolean winner = didPlayerWin();
             nextPlayer();
-
             return winner;
         }
     }
