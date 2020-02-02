@@ -11,4 +11,8 @@ import java.util.LinkedList;
  **/
 public class QuestionContainer {
     private HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
+
+    public String getNextQuestion(Category category) {
+        return questionMap.get(category).removeFirst();
+    }
 }

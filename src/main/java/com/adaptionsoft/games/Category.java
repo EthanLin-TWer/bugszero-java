@@ -26,6 +26,8 @@ public enum Category {
 
     public static Category getCurrentCategory(int place) {
         int index = place % Category.values().length;
-        return Category.values()[index];
+        Category category = Category.values()[index];
+        System.out.println("The category is " + category.getValue());
+        return category;
     }
 }
