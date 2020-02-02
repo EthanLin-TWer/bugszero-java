@@ -51,7 +51,6 @@ public class Game {
             tempPlayers.get(currentPlayer).moveTo(roll);
             askQuestion();
         }
-
     }
 
     private void askQuestion() {
@@ -125,14 +124,6 @@ public class Game {
     private void getOutOfPenaltyBox() {
         isGettingOutOfPenaltyBox = true;
         System.out.println(getCurrentPlayer() + " is getting out of the penalty box");
-    }
-
-    private void movePlayer(int roll) {
-        tempPlayers.get(currentPlayer).place = getCurrentPlace() + roll;
-        if (getCurrentPlace() > 11) tempPlayers.get(currentPlayer).place = getCurrentPlace() - 12;
-        System.out.println(getCurrentPlayer()
-                + "'s new location is "
-                + getCurrentPlace());
     }
 
     private int getCurrentPlace() {
