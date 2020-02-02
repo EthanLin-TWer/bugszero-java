@@ -111,7 +111,6 @@ public class Game {
         System.out.println("Question was incorrectly answered");
         System.out.println(getCurrentPlayer() + " was sent to the penalty box");
         tempPlayers.get(currentPlayer).isInPenaltyBox = true;
-
         nextPlayer();
         return true;
     }
@@ -141,7 +140,6 @@ public class Game {
     private String getCurrentPlayer() {
         return tempPlayers.get(currentPlayer).getName();
     }
-
 
     private boolean didPlayerWin() {
         return !(tempPlayers.get(currentPlayer).goldCoin == 6);

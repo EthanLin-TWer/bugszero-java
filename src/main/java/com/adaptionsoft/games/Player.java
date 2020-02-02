@@ -27,4 +27,9 @@ public class Player {
         }
         System.out.println(name + "'s new location is " + place);
     }
+
+    public void gainGoldCoin() {
+        goldCoin++;
+        System.out.println(name + " now has " + goldCoin + " Gold Coins.");
+    }
 }
