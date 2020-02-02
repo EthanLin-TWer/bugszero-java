@@ -9,6 +9,7 @@ package com.adaptionsoft.games;
 public class Player {
     private String name;
     public int place = 0;
+    public int goldCoin = 0;
 
     public Player(String name) {
         this.name = name;
