@@ -36,9 +36,15 @@ public class Player {
     }
 
     public void sendToPenaltyBox() {
-        System.out.println(name + " was sent to the penalty box");
         isInPenaltyBox = true;
+        System.out.println(name + " was sent to the penalty box");
     }
+
+    private void getOutOfPenaltyBox() {
+        isInPenaltyBox = false;
+        System.out.println(name + " is getting out of the penalty box");
+    }
+
 
     public boolean isWin() {
         return goldCoin >= 6;
