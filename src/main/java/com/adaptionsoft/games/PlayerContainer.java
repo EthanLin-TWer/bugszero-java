@@ -17,8 +17,12 @@ public class PlayerContainer {
         System.out.println("They are player number " + players.size());
     }
 
-    private void nextPlayer() {
+    public void nextPlayer() {
         currentPlayer++;
         if (currentPlayer == players.size()) currentPlayer = 0;
+    }
+
+    public Player getCurrentPlayer() {
+        return players.get(currentPlayer);
     }
 }
