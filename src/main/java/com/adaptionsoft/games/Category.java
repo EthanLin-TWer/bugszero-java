@@ -7,7 +7,12 @@ package com.adaptionsoft.games;
  * Description:
  **/
 public enum Category {
-    POP("Pop"), SCIENCE("Science"), SPORTS("Sports"), ROCK("Rock");
+    POP("Pop"),
+    SCIENCE("Science"),
+    SPORTS("Sports"),
+    ROCK("Rock"),
+    BLUES("Blues"),
+    HISTORY("History");
 
     private String value;
 
