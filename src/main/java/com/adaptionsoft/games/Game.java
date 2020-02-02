@@ -1,7 +1,5 @@
 package com.adaptionsoft.games;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Random;
 
 public class Game {
@@ -25,7 +23,7 @@ public class Game {
     }
 
     public void roll(int roll) {
-        System.out.println(getCurrentPlayerName() + " is the current player");
+        System.out.println(players.getCurrentPlayer().getName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
         if (!isCurrentPlayerInPenaltyBox()) {
@@ -44,7 +42,8 @@ public class Game {
     }
 
     private void askQuestion() {
-        Category currentCategory = Category.getCurrentCategory(getCurrentPlace());
+        int currentPlace = players.getCurrentPlayer().getPlace();
+        Category currentCategory = Category.getCurrentCategory(currentPlace);
         String question = questions.getNextQuestion(currentCategory);
         System.out.println(question);
     }
@@ -61,14 +60,6 @@ public class Game {
             System.out.println("Question was incorrectly answered");
             players.getCurrentPlayer().sendToPenaltyBox();
         }
-    }
-
-    private int getCurrentPlace() {
-        return players.getCurrentPlayer().getPlace();
-    }
-
-    private String getCurrentPlayerName() {
-        return players.getCurrentPlayer().getName();
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
