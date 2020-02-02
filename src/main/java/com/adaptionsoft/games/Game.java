@@ -50,7 +50,7 @@ public class Game {
                 players.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
-                stayInPenaltyBox();
+                tempStayInPenaltyBox();
             }
         } else {
             players.get(currentPlayer).moveTo(roll);
@@ -101,6 +101,11 @@ public class Game {
         System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
     }
 
+    private void tempStayInPenaltyBox() {
+        isGettingOutOfPenaltyBox = false;
+        System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
+    }
+
     private void getOutOfPenaltyBox(){
         players.get(currentPlayer).isInPenaltyBox = false;
         System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
@@ -115,6 +120,6 @@ public class Game {
     }
 
     private boolean nobodyWin() {
-        return !players.stream().anyMatch(Player::isWin);
+        return players.stream().noneMatch(Player::isWin);
     }
 }
