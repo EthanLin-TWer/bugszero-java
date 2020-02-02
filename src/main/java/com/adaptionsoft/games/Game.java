@@ -46,7 +46,7 @@ public class Game {
 
         if (players.get(currentPlayer).isInPenaltyBox) {
             if (roll % 2 != 0) {
-                getOutOfPenaltyBox();
+                players.get(currentPlayer).getOutOfPenaltyBox();
                 players.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
@@ -93,11 +93,6 @@ public class Game {
 
     private void stayInPenaltyBox() {
         System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
-    }
-
-    private void getOutOfPenaltyBox() {
-        players.get(currentPlayer).isInPenaltyBox = false;
-        System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
     }
 
     private int getCurrentPlace() {
