@@ -53,6 +53,10 @@ public class Player {
     }
 
     public boolean isInPenaltyBox() {
-        return isInPenaltyBox   ;
+        return isInPenaltyBox;
+    }
+
+    public void stayInPenaltyBox() {
+        System.out.println(name + " is not getting out of the penalty box");
     }
 }

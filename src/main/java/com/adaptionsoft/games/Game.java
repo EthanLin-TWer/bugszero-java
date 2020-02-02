@@ -45,16 +45,12 @@ public class Game {
                 players.getCurrentPlayer().moveTo(roll);
                 askQuestion();
             } else {
-                stayInPenaltyBox();
+                players.getCurrentPlayer().stayInPenaltyBox();
             }
         } else {
             players.getCurrentPlayer().moveTo(roll);
             askQuestion();
         }
-    }
-
-    private boolean isCurrentPlayerInPenaltyBox() {
-        return players.getCurrentPlayer().isInPenaltyBox();
     }
 
     private void askQuestion() {
@@ -77,15 +73,15 @@ public class Game {
         }
     }
 
-    private void stayInPenaltyBox() {
-        System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
-    }
-
     private int getCurrentPlace() {
         return players.getCurrentPlayer().getPlace();
     }
 
     private String getCurrentPlayerName() {
         return players.getCurrentPlayer().getName();
+    }
+
+    private boolean isCurrentPlayerInPenaltyBox() {
+        return players.getCurrentPlayer().isInPenaltyBox();
     }
 }
