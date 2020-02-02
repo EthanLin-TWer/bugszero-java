@@ -24,7 +24,7 @@ public enum Category {
         return value;
     }
 
-    public Category getCurrentCategory(int place) {
+    public static Category getCurrentCategory(int place) {
         int index = place % Category.values().length;
         return Category.values()[index];
     }

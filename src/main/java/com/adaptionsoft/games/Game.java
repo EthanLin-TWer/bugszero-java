@@ -58,14 +58,9 @@ public class Game {
     }
 
     private void askQuestion() {
-        Category currentCategory = currentCategory();
+        Category currentCategory = Category.getCurrentCategory(getCurrentPlace());
         System.out.println("The category is " + currentCategory.getValue());
         System.out.println(questionMap.get(currentCategory).removeFirst());
-    }
-
-    private Category currentCategory() {
-        int index = getCurrentPlace() % Category.values().length;
-        return Category.values()[index];
     }
 
     private void nextPlayer() {
