@@ -129,7 +129,4 @@ public class Game {
         return tempPlayers.get(currentPlayer).getName();
     }
 
-    private boolean didPlayerWin() {
-        return !(tempPlayers.get(currentPlayer).goldCoin == 6);
-    }
 }
