@@ -105,11 +105,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 nextPlayer();
-                goldCoins[currentPlayer]++;
-                System.out.println(players.get(currentPlayer)
-                        + " now has "
-                        + goldCoins[currentPlayer]
-                        + " Gold Coins.");
+                gainGoldCoin();
 
                 return didPlayerWin();
             } else {
@@ -119,17 +115,21 @@ public class Game {
         } else {
 
             System.out.println("Answer was correct!!!!");
-            goldCoins[currentPlayer]++;
-            System.out.println(players.get(currentPlayer)
-                    + " now has "
-                    + goldCoins[currentPlayer]
-                    + " Gold Coins.");
+            gainGoldCoin();
 
             boolean winner = didPlayerWin();
             nextPlayer();
 
             return winner;
         }
+    }
+
+    private void gainGoldCoin() {
+        goldCoins[currentPlayer]++;
+        System.out.println(players.get(currentPlayer)
+                + " now has "
+                + goldCoins[currentPlayer]
+                + " Gold Coins.");
     }
 
     private void nextPlayer() {
