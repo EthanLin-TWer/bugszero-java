@@ -82,8 +82,10 @@ public class Game {
     }
 
     public void wrongAnswer() {
-        System.out.println("Question was incorrectly answered");
-        players.get(currentPlayer).sendToPenaltyBox();
+        if (!players.get(currentPlayer).isInPenaltyBox) {
+            System.out.println("Question was incorrectly answered");
+            players.get(currentPlayer).sendToPenaltyBox();
+        }
     }
 
     private void stayInPenaltyBox() {
