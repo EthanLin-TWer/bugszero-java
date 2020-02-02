@@ -27,6 +27,7 @@ public class Game {
         boolean notAWinner = true;
         while (notAWinner) {
             roll(rand.nextInt(5) + 1);
+
             if (rand.nextInt(9) == 7) {
                 notAWinner = wrongAnswer();
             } else {
@@ -96,10 +97,14 @@ public class Game {
 
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
-        players.get(currentPlayer).isInPenaltyBox = true;
+        sendToPenaltyBox();
         nextPlayer();
         return true;
+    }
+
+    private void sendToPenaltyBox() {
+        System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
+        players.get(currentPlayer).isInPenaltyBox = true;
     }
 
     private void stayInPenaltyBox() {
