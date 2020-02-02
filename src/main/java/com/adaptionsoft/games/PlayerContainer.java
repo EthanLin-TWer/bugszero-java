@@ -1,5 +1,7 @@
 package com.adaptionsoft.games;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: lai.yi
@@ -7,4 +9,10 @@ package com.adaptionsoft.games;
  * Description:
  **/
 public class PlayerContainer {
+    private ArrayList<Player> players = new ArrayList<>();
+
+    public void addPlayer(String playerName) {
+        players.add(new Player(playerName));
+        System.out.println("They are player number " + players.size());
+    }
 }
