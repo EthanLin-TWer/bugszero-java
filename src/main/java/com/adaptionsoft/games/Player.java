@@ -10,6 +10,7 @@ public class Player {
     private String name;
     public int place = 0;
     public int goldCoin = 0;
+    public boolean isInPenaltyBox = false;
 
     public Player(String name) {
         this.name = name;

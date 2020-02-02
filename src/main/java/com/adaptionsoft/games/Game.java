@@ -32,8 +32,6 @@ public class Game {
     public void addPlayer(String playerName) {
         players.add(playerName);
         tempPlayers.add(new Player(playerName));
-        inPenaltyBox[howManyPlayers()] = false;
-
         System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
     }
