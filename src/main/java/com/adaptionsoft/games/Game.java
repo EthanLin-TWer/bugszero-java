@@ -33,6 +33,7 @@ public class Game {
             } else {
                 notAWinner = correctAnswer();
             }
+            nextPlayer();
         }
     }
 
@@ -79,26 +80,21 @@ public class Game {
         if (players.get(currentPlayer).isInPenaltyBox) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
-                nextPlayer();
                 players.get(currentPlayer).gainGoldCoin();
                 return !players.get(currentPlayer).isWin();
             } else {
-                nextPlayer();
                 return true;
             }
         } else {
             System.out.println("Answer was correct!!!!");
             players.get(currentPlayer).gainGoldCoin();
-            boolean winner = !players.get(currentPlayer).isWin();
-            nextPlayer();
-            return winner;
+            return !players.get(currentPlayer).isWin();
         }
     }
 
     public void wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         sendToPenaltyBox();
-        nextPlayer();
     }
 
     private void sendToPenaltyBox() {
