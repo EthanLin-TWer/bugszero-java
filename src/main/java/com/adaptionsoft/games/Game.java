@@ -34,7 +34,6 @@ public class Game {
     public void addPlayer(String playerName) {
         players.add(playerName);
         tempPlayers.add(new Player(playerName));
-        places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
@@ -76,8 +75,8 @@ public class Game {
     }
 
     private void movePlayer(int roll) {
-        places[currentPlayer] = getCurrentPlace() + roll;
-        if (getCurrentPlace() > 11) places[currentPlayer] = getCurrentPlace() - 12;
+        tempPlayers.get(currentPlayer).place = getCurrentPlace() + roll;
+        if (getCurrentPlace() > 11) tempPlayers.get(currentPlayer).place = getCurrentPlace() - 12;
         System.out.println(getCurrentPlayer()
                 + "'s new location is "
                 + getCurrentPlace());
@@ -110,7 +109,7 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return places[currentPlayer];
+        return tempPlayers.get(currentPlayer).place;
     }
 
     public boolean wasCorrectlyAnswered() {
