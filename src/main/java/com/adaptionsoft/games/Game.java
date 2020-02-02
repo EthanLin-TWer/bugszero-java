@@ -75,12 +75,7 @@ public class Game {
     }
 
     public void correctAnswer() {
-        if (players.get(currentPlayer).isInPenaltyBox) {
-            if (isGettingOutOfPenaltyBox) {
-                System.out.println("Answer was correct!!!!");
-                players.get(currentPlayer).gainGoldCoin();
-            }
-        } else {
+        if (!players.get(currentPlayer).isInPenaltyBox) {
             System.out.println("Answer was correct!!!!");
             players.get(currentPlayer).gainGoldCoin();
         }
