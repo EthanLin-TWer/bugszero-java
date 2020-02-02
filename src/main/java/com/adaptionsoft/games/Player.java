@@ -12,7 +12,9 @@ public class Player {
     public int goldCoin = 0;
     public boolean isInPenaltyBox = false;
 
+
     public Player(String name) {
+        System.out.println(name + " was added");
         this.name = name;
     }
 

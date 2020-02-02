@@ -1,16 +1,17 @@
 package com.adaptionsoft.games;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Game {
-    ArrayList<String> players = new ArrayList<>();
-    ArrayList<Player> tempPlayers = new ArrayList<>();
-
+    ArrayList<Player> players = new ArrayList<>();
     LinkedList<String> popQuestions = new LinkedList<>();
     LinkedList<String> scienceQuestions = new LinkedList<>();
     LinkedList<String> sportsQuestions = new LinkedList<>();
     LinkedList<String> rockQuestions = new LinkedList<>();
+
+    HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
@@ -29,26 +30,24 @@ public class Game {
     }
 
     public void addPlayer(String playerName) {
-        players.add(playerName);
-        tempPlayers.add(new Player(playerName));
-        System.out.println(playerName + " was added");
+        players.add(new Player(playerName));
         System.out.println("They are player number " + players.size());
     }
 
     public void roll(int roll) {
-        System.out.println(getCurrentPlayer() + " is the current player");
+        System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
-        if (tempPlayers.get(currentPlayer).isInPenaltyBox) {
+        if (players.get(currentPlayer).isInPenaltyBox) {
             if (roll % 2 != 0) {
                 getOutOfPenaltyBox();
-                tempPlayers.get(currentPlayer).moveTo(roll);
+                players.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
                 stayInPenaltyBox();
             }
         } else {
-            tempPlayers.get(currentPlayer).moveTo(roll);
+            players.get(currentPlayer).moveTo(roll);
             askQuestion();
         }
     }
@@ -84,20 +83,20 @@ public class Game {
     }
 
     public boolean wasCorrectlyAnswered() {
-        if (tempPlayers.get(currentPlayer).isInPenaltyBox) {
+        if (players.get(currentPlayer).isInPenaltyBox) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 nextPlayer();
-                tempPlayers.get(currentPlayer).gainGoldCoin();
-                return !tempPlayers.get(currentPlayer).isWin();
+                players.get(currentPlayer).gainGoldCoin();
+                return !players.get(currentPlayer).isWin();
             } else {
                 nextPlayer();
                 return true;
             }
         } else {
             System.out.println("Answer was correct!!!!");
-            tempPlayers.get(currentPlayer).gainGoldCoin();
-            boolean winner = !tempPlayers.get(currentPlayer).isWin();
+            players.get(currentPlayer).gainGoldCoin();
+            boolean winner = !players.get(currentPlayer).isWin();
             nextPlayer();
             return winner;
         }
@@ -105,28 +104,27 @@ public class Game {
 
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(getCurrentPlayer() + " was sent to the penalty box");
-        tempPlayers.get(currentPlayer).isInPenaltyBox = true;
+        System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
+        players.get(currentPlayer).isInPenaltyBox = true;
         nextPlayer();
         return true;
     }
 
     private void stayInPenaltyBox() {
         isGettingOutOfPenaltyBox = false;
-        System.out.println(getCurrentPlayer() + " is not getting out of the penalty box");
+        System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
     }
 
     private void getOutOfPenaltyBox() {
         isGettingOutOfPenaltyBox = true;
-        System.out.println(getCurrentPlayer() + " is getting out of the penalty box");
+        System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
     }
 
     private int getCurrentPlace() {
-        return tempPlayers.get(currentPlayer).place;
+        return players.get(currentPlayer).place;
     }
 
-    private String getCurrentPlayer() {
-        return tempPlayers.get(currentPlayer).getName();
+    private String getCurrentPlayerName() {
+        return players.get(currentPlayer).getName();
     }
-
 }
