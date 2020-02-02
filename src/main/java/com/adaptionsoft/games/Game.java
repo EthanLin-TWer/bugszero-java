@@ -54,14 +54,18 @@ public class Game {
                 movePlayer(roll);
                 askQuestion();
             } else {
-                isGettingOutOfPenaltyBox = false;
-                System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
+                stayInPenaltyBox();
             }
         } else {
             movePlayer(roll);
             askQuestion();
         }
 
+    }
+
+    private void stayInPenaltyBox() {
+        isGettingOutOfPenaltyBox = false;
+        System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
     }
 
     private void getOutOfPenaltyBox() {
