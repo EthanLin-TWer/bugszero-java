@@ -89,7 +89,7 @@ public class Game {
                 System.out.println("Answer was correct!!!!");
                 nextPlayer();
                 tempPlayers.get(currentPlayer).gainGoldCoin();
-                return didPlayerWin();
+                return !tempPlayers.get(currentPlayer).isWin();
             } else {
                 nextPlayer();
                 return true;
@@ -97,7 +97,7 @@ public class Game {
         } else {
             System.out.println("Answer was correct!!!!");
             tempPlayers.get(currentPlayer).gainGoldCoin();
-            boolean winner = didPlayerWin();
+            boolean winner = !tempPlayers.get(currentPlayer).isWin();
             nextPlayer();
             return winner;
         }
