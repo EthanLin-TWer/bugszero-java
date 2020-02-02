@@ -31,7 +31,7 @@ public class Game {
             if (rand.nextInt(9) == 7) {
                 wrongAnswer();
             } else {
-                notAWinner = wasCorrectlyAnswered();
+                notAWinner = correctAnswer();
             }
         }
     }
@@ -75,7 +75,7 @@ public class Game {
         if (currentPlayer == players.size()) currentPlayer = 0;
     }
 
-    public boolean wasCorrectlyAnswered() {
+    public boolean correctAnswer() {
         if (players.get(currentPlayer).isInPenaltyBox) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
