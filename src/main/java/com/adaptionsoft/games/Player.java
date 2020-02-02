@@ -19,4 +19,12 @@ public class Player {
     public String getName() {
         return name;
     }
+
+    public void moveTo(int roll) {
+        place += roll;
+        if (place > 11) {
+            place -= 12;
+        }
+        System.out.println(name + "'s new location is " + place);
+    }
 }
