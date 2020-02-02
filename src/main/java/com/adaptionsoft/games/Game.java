@@ -22,10 +22,6 @@ public class Game {
         }
     }
 
-    public String createRockQuestion(int index) {
-        return "Rock Question " + index;
-    }
-
     public void addPlayer(String playerName) {
         players.add(new Player(playerName));
         System.out.println("They are player number " + players.size());
