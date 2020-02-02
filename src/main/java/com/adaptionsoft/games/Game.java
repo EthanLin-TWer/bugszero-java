@@ -33,6 +33,7 @@ public class Game {
 
     public void addPlayer(String playerName) {
         players.add(playerName);
+        tempPlayers.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
