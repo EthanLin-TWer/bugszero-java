@@ -50,7 +50,7 @@ public class Game {
                 players.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
-                tempStayInPenaltyBox();
+                stayInPenaltyBox();
             }
         } else {
             players.get(currentPlayer).moveTo(roll);
@@ -97,12 +97,6 @@ public class Game {
     }
 
     private void stayInPenaltyBox() {
-        isGettingOutOfPenaltyBox = false;
-        System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
-    }
-
-    private void tempStayInPenaltyBox() {
-        isGettingOutOfPenaltyBox = false;
         System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
     }
 
