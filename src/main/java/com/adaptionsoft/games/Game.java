@@ -50,14 +50,12 @@ public class Game {
 
         if (inPenaltyBox[currentPlayer]) {
             if (roll % 2 != 0) {
-                isGettingOutOfPenaltyBox = true;
-
-                System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+                getOutOfPenaltyBox();
                 movePlayer(roll);
                 askQuestion();
             } else {
-                System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
+                System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
             }
         } else {
             movePlayer(roll);
@@ -66,7 +64,12 @@ public class Game {
 
     }
 
-	private void movePlayer(int roll) {
+    private void getOutOfPenaltyBox() {
+        isGettingOutOfPenaltyBox = true;
+        System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+    }
+
+    private void movePlayer(int roll) {
         places[currentPlayer] = places[currentPlayer] + roll;
         if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
         System.out.println(players.get(currentPlayer)
