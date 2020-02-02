@@ -28,17 +28,18 @@ public class Game {
         System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
-        if (isCurrentPlayerInPenaltyBox()) {
-            if (roll % 2 != 0) {
-                players.getCurrentPlayer().getOutOfPenaltyBox();
-                players.getCurrentPlayer().moveTo(roll);
-                askQuestion();
-            } else {
-                players.getCurrentPlayer().stayInPenaltyBox();
-            }
-        } else {
+        if (!isCurrentPlayerInPenaltyBox()) {
             players.getCurrentPlayer().moveTo(roll);
             askQuestion();
+            return;
+        }
+
+        if (roll % 2 != 0) {
+            players.getCurrentPlayer().getOutOfPenaltyBox();
+            players.getCurrentPlayer().moveTo(roll);
+            askQuestion();
+        } else {
+            players.getCurrentPlayer().stayInPenaltyBox();
         }
     }
 
