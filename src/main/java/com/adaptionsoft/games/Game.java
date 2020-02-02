@@ -45,36 +45,10 @@ public class Game {
         }
     }
 
-    private void askQuestion() {
-        String currentCategory = currentCategory();
-        System.out.println("The category is " + currentCategory);
-        if (currentCategory.equals("Pop"))
-            System.out.println(questionMap.get(Category.POP).removeFirst());
-        if (currentCategory.equals("Science"))
-            System.out.println(questionMap.get(Category.SCIENCE).removeFirst());
-        if (currentCategory.equals("Sports"))
-            System.out.println(questionMap.get(Category.SPORTS).removeFirst());
-        if (currentCategory.equals("Rock"))
-            System.out.println(questionMap.get(Category.ROCK).removeFirst());
-    }
-
     private void tempAskQuestion() {
         Category currentCategory = tempCurrentCategory();
         System.out.println("The category is " + currentCategory.getValue());
         System.out.println(questionMap.get(currentCategory).removeFirst());
-    }
-
-    private String currentCategory() {
-        if (getCurrentPlace() == 0) return "Pop";
-        if (getCurrentPlace() == 4) return "Pop";
-        if (getCurrentPlace() == 8) return "Pop";
-        if (getCurrentPlace() == 1) return "Science";
-        if (getCurrentPlace() == 5) return "Science";
-        if (getCurrentPlace() == 9) return "Science";
-        if (getCurrentPlace() == 2) return "Sports";
-        if (getCurrentPlace() == 6) return "Sports";
-        if (getCurrentPlace() == 10) return "Sports";
-        return "Rock";
     }
 
     private Category tempCurrentCategory() {
