@@ -3,6 +3,7 @@ package com.adaptionsoft.games;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
@@ -20,6 +21,19 @@ public class Game {
             }
             questionMap.put(category, list);
         }
+    }
+
+    public void run(Random rand) {
+        boolean notAWinner;
+        do {
+            roll(rand.nextInt(5) + 1);
+
+            if (rand.nextInt(9) == 7) {
+                notAWinner = wrongAnswer();
+            } else {
+                notAWinner = wasCorrectlyAnswered();
+            }
+        } while (notAWinner);
     }
 
     public void addPlayer(String playerName) {
