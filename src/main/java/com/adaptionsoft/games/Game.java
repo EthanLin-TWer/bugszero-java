@@ -6,24 +6,22 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
-    LinkedList<String> popQuestions = new LinkedList<>();
-    LinkedList<String> scienceQuestions = new LinkedList<>();
-    LinkedList<String> sportsQuestions = new LinkedList<>();
-    LinkedList<String> rockQuestions = new LinkedList<>();
-
     HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
+        LinkedList<String> popQuestions = new LinkedList<>();
+        LinkedList<String> scienceQuestions = new LinkedList<>();
+        LinkedList<String> sportsQuestions = new LinkedList<>();
+        LinkedList<String> rockQuestions = new LinkedList<>();
         for (int i = 0; i < 50; i++) {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
             rockQuestions.addLast(createRockQuestion(i));
         }
-
         questionMap.put(Category.POP, popQuestions);
         questionMap.put(Category.SCIENCE, scienceQuestions);
         questionMap.put(Category.SPORTS, sportsQuestions);
