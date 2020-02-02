@@ -25,4 +25,8 @@ public class PlayerContainer {
     public Player getCurrentPlayer() {
         return players.get(currentPlayer);
     }
+
+    public boolean nobodyWin(){
+        return players.stream().noneMatch(Player::isWin);
+    }
 }

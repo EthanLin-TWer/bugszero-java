@@ -1,15 +1,12 @@
 package com.adaptionsoft.games;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class Game {
-    ArrayList<Player> players = new ArrayList<>();
+    PlayerContainer players = new PlayerContainer();
     HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
-
-    int currentPlayer = 0;
 
     public Game() {
         for (Category category : Category.values()) {
@@ -23,36 +20,35 @@ public class Game {
     }
 
     public void run(Random rand) {
-        while (nobodyWin()) {
+        while (players.nobodyWin()) {
             roll(rand.nextInt(5) + 1);
             if (rand.nextInt(9) == 7) {
                 wrongAnswer();
             } else {
                 correctAnswer();
             }
-            nextPlayer();
+            players.nextPlayer();
         }
     }
 
     public void addPlayer(String playerName) {
-        players.add(new Player(playerName));
-        System.out.println("They are player number " + players.size());
+        players.addPlayer(playerName);
     }
 
     public void roll(int roll) {
         System.out.println(getCurrentPlayerName() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
-        if (players.get(currentPlayer).isInPenaltyBox) {
+        if (players.getCurrentPlayer().isInPenaltyBox) {
             if (roll % 2 != 0) {
-                players.get(currentPlayer).getOutOfPenaltyBox();
-                players.get(currentPlayer).moveTo(roll);
+                players.getCurrentPlayer().getOutOfPenaltyBox();
+                players.getCurrentPlayer().moveTo(roll);
                 askQuestion();
             } else {
                 stayInPenaltyBox();
             }
         } else {
-            players.get(currentPlayer).moveTo(roll);
+            players.getCurrentPlayer().moveTo(roll);
             askQuestion();
         }
     }
@@ -63,22 +59,17 @@ public class Game {
         System.out.println(questionMap.get(currentCategory).removeFirst());
     }
 
-    private void nextPlayer() {
-        currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
-    }
-
     public void correctAnswer() {
-        if (!players.get(currentPlayer).isInPenaltyBox) {
+        if (!players.getCurrentPlayer().isInPenaltyBox) {
             System.out.println("Answer was correct!!!!");
-            players.get(currentPlayer).gainGoldCoin();
+            players.getCurrentPlayer().gainGoldCoin();
         }
     }
 
     public void wrongAnswer() {
-        if (!players.get(currentPlayer).isInPenaltyBox) {
+        if (!players.getCurrentPlayer().isInPenaltyBox) {
             System.out.println("Question was incorrectly answered");
-            players.get(currentPlayer).sendToPenaltyBox();
+            players.getCurrentPlayer().sendToPenaltyBox();
         }
     }
 
@@ -87,14 +78,10 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return players.get(currentPlayer).place;
+        return players.getCurrentPlayer().place;
     }
 
     private String getCurrentPlayerName() {
-        return players.get(currentPlayer).getName();
-    }
-
-    private boolean nobodyWin() {
-        return players.stream().noneMatch(Player::isWin);
+        return players.getCurrentPlayer().getName();
     }
 }
