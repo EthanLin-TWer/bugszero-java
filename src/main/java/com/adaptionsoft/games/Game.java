@@ -24,16 +24,15 @@ public class Game {
     }
 
     public void run(Random rand) {
-        boolean notAWinner;
-        do {
+        boolean notAWinner = true;
+        while (notAWinner) {
             roll(rand.nextInt(5) + 1);
-
             if (rand.nextInt(9) == 7) {
                 notAWinner = wrongAnswer();
             } else {
                 notAWinner = wasCorrectlyAnswered();
             }
-        } while (notAWinner);
+        }
     }
 
     public void addPlayer(String playerName) {
