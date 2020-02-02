@@ -42,13 +42,13 @@ public class Game {
         if (tempPlayers.get(currentPlayer).isInPenaltyBox) {
             if (roll % 2 != 0) {
                 getOutOfPenaltyBox();
-                movePlayer(roll);
+                tempPlayers.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
                 stayInPenaltyBox();
             }
         } else {
-            movePlayer(roll);
+            tempPlayers.get(currentPlayer).moveTo(roll);
             askQuestion();
         }
 
