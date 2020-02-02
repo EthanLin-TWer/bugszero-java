@@ -10,7 +10,7 @@ public class Player {
     private String name;
     private int place = 0;
     private int goldCoin = 0;
-    public boolean isInPenaltyBox = false;
+    private boolean isInPenaltyBox = false;
 
     public Player(String name) {
         System.out.println(name + " was added");
@@ -50,5 +50,9 @@ public class Player {
 
     public int getPlace() {
         return place;
+    }
+
+    public boolean isInPenaltyBox() {
+        return isInPenaltyBox   ;
     }
 }
