@@ -45,7 +45,7 @@ public class Game {
     }
 
     public void roll(int roll) {
-        System.out.println(players.get(currentPlayer) + " is the current player");
+        System.out.println(getCurrentPlayer() + " is the current player");
         System.out.println("They have rolled a " + roll);
 
         if (inPenaltyBox[currentPlayer]) {
@@ -65,18 +65,18 @@ public class Game {
 
     private void stayInPenaltyBox() {
         isGettingOutOfPenaltyBox = false;
-        System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
+        System.out.println(getCurrentPlayer() + " is not getting out of the penalty box");
     }
 
     private void getOutOfPenaltyBox() {
         isGettingOutOfPenaltyBox = true;
-        System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+        System.out.println(getCurrentPlayer() + " is getting out of the penalty box");
     }
 
     private void movePlayer(int roll) {
         places[currentPlayer] = places[currentPlayer] + roll;
         if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-        System.out.println(players.get(currentPlayer)
+        System.out.println(getCurrentPlayer()
                 + "'s new location is "
                 + places[currentPlayer]);
         System.out.println("The category is " + currentCategory());
@@ -133,7 +133,7 @@ public class Game {
 
     private void gainGoldCoin() {
         goldCoins[currentPlayer]++;
-        System.out.println(players.get(currentPlayer)
+        System.out.println(getCurrentPlayer()
                 + " now has "
                 + goldCoins[currentPlayer]
                 + " Gold Coins.");
@@ -146,11 +146,15 @@ public class Game {
 
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(players.get(currentPlayer) + " was sent to the penalty box");
+        System.out.println(getCurrentPlayer() + " was sent to the penalty box");
         inPenaltyBox[currentPlayer] = true;
 
         nextPlayer();
         return true;
+    }
+
+    private String getCurrentPlayer() {
+        return players.get(currentPlayer);
     }
 
 
