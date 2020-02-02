@@ -6,18 +6,7 @@ import java.util.Random;
 
 public class Game {
     PlayerContainer players = new PlayerContainer();
-    HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
-
-    public Game() {
-        for (Category category : Category.values()) {
-            LinkedList<String> list = new LinkedList<>();
-            for (int i = 0; i < 50; i++) {
-                String question = category.getValue() + " Question " + i;
-                list.addLast(question);
-            }
-            questionMap.put(category, list);
-        }
-    }
+    QuestionContainer questions = new QuestionContainer();
 
     public void run(Random rand) {
         while (players.nobodyWin()) {
@@ -55,7 +44,8 @@ public class Game {
 
     private void askQuestion() {
         Category currentCategory = Category.getCurrentCategory(getCurrentPlace());
-        System.out.println(questionMap.get(currentCategory).removeFirst());
+        String question = questions.getNextQuestion(currentCategory);
+        System.out.println(question);
     }
 
     public void correctAnswer() {
