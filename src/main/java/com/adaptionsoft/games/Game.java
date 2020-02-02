@@ -24,14 +24,12 @@ public class Game {
     }
 
     public void run(Random rand) {
-        boolean notAWinner = true;
-        while (notAWinner) {
+        while (nobodyWin()) {
             roll(rand.nextInt(5) + 1);
-
             if (rand.nextInt(9) == 7) {
                 wrongAnswer();
             } else {
-                notAWinner = correctAnswer();
+                correctAnswer();
             }
             nextPlayer();
         }
@@ -76,19 +74,15 @@ public class Game {
         if (currentPlayer == players.size()) currentPlayer = 0;
     }
 
-    public boolean correctAnswer() {
+    public void correctAnswer() {
         if (players.get(currentPlayer).isInPenaltyBox) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 players.get(currentPlayer).gainGoldCoin();
-                return !players.get(currentPlayer).isWin();
-            } else {
-                return true;
             }
         } else {
             System.out.println("Answer was correct!!!!");
             players.get(currentPlayer).gainGoldCoin();
-            return !players.get(currentPlayer).isWin();
         }
     }
 
@@ -112,11 +106,20 @@ public class Game {
         System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
     }
 
+    private void tempGetOutOfPenaltyBox(){
+        players.get(currentPlayer).isInPenaltyBox = false;
+        System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
+    }
+
     private int getCurrentPlace() {
         return players.get(currentPlayer).place;
     }
 
     private String getCurrentPlayerName() {
         return players.get(currentPlayer).getName();
+    }
+
+    private boolean nobodyWin() {
+        return !players.stream().anyMatch(Player::isWin);
     }
 }
