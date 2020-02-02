@@ -46,7 +46,7 @@ public class Game {
 
         if (players.get(currentPlayer).isInPenaltyBox) {
             if (roll % 2 != 0) {
-                getOutOfPenaltyBox();
+                tempGetOutOfPenaltyBox();
                 players.get(currentPlayer).moveTo(roll);
                 askQuestion();
             } else {
