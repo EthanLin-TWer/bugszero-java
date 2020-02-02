@@ -52,16 +52,8 @@ public class Game {
     }
 
     private Category currentCategory() {
-        if (getCurrentPlace() == 0) return Category.POP;
-        if (getCurrentPlace() == 4) return Category.POP;
-        if (getCurrentPlace() == 8) return Category.POP;
-        if (getCurrentPlace() == 1) return Category.SCIENCE;
-        if (getCurrentPlace() == 5) return Category.SCIENCE;
-        if (getCurrentPlace() == 9) return Category.SCIENCE;
-        if (getCurrentPlace() == 2) return Category.SPORTS;
-        if (getCurrentPlace() == 6) return Category.SPORTS;
-        if (getCurrentPlace() == 10) return Category.SPORTS;
-        return Category.ROCK;
+        int index = getCurrentPlace() % Category.values().length;
+        return Category.values()[index];
     }
 
     private void nextPlayer() {
