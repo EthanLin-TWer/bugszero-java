@@ -88,19 +88,14 @@ public class Game {
 
     public void wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        sendToPenaltyBox();
-    }
-
-    private void sendToPenaltyBox() {
-        System.out.println(getCurrentPlayerName() + " was sent to the penalty box");
-        players.get(currentPlayer).isInPenaltyBox = true;
+        players.get(currentPlayer).sendToPenaltyBox();
     }
 
     private void stayInPenaltyBox() {
         System.out.println(getCurrentPlayerName() + " is not getting out of the penalty box");
     }
 
-    private void getOutOfPenaltyBox(){
+    private void getOutOfPenaltyBox() {
         players.get(currentPlayer).isInPenaltyBox = false;
         System.out.println(getCurrentPlayerName() + " is getting out of the penalty box");
     }
