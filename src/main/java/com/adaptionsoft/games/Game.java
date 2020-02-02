@@ -125,14 +125,6 @@ public class Game {
         return tempPlayers.get(currentPlayer).place;
     }
 
-    private void gainGoldCoin() {
-        tempPlayers.get(currentPlayer).goldCoin++;
-        System.out.println(getCurrentPlayer()
-                + " now has "
-                + tempPlayers.get(currentPlayer).goldCoin
-                + " Gold Coins.");
-    }
-
     private String getCurrentPlayer() {
         return tempPlayers.get(currentPlayer).getName();
     }
