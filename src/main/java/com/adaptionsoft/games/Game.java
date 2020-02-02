@@ -35,23 +35,23 @@ public class Game {
             if (roll % 2 != 0) {
                 getOutOfPenaltyBox();
                 players.get(currentPlayer).moveTo(roll);
-                tempAskQuestion();
+                askQuestion();
             } else {
                 stayInPenaltyBox();
             }
         } else {
             players.get(currentPlayer).moveTo(roll);
-            tempAskQuestion();
+            askQuestion();
         }
     }
 
-    private void tempAskQuestion() {
-        Category currentCategory = tempCurrentCategory();
+    private void askQuestion() {
+        Category currentCategory = currentCategory();
         System.out.println("The category is " + currentCategory.getValue());
         System.out.println(questionMap.get(currentCategory).removeFirst());
     }
 
-    private Category tempCurrentCategory() {
+    private Category currentCategory() {
         if (getCurrentPlace() == 0) return Category.POP;
         if (getCurrentPlace() == 4) return Category.POP;
         if (getCurrentPlace() == 8) return Category.POP;
