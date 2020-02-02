@@ -26,7 +26,7 @@ public class Game {
 
         questionMap.put(Category.POP, popQuestions);
         questionMap.put(Category.SCIENCE, scienceQuestions);
-        questionMap.put(Category.SPORTS, scienceQuestions);
+        questionMap.put(Category.SPORTS, sportsQuestions);
         questionMap.put(Category.ROCK, rockQuestions);
     }
 
@@ -58,15 +58,16 @@ public class Game {
     }
 
     private void askQuestion() {
-        System.out.println("The category is " + currentCategory());
-        if (currentCategory().equals("Pop"))
-            System.out.println(popQuestions.removeFirst());
-        if (currentCategory().equals("Science"))
-            System.out.println(scienceQuestions.removeFirst());
-        if (currentCategory().equals("Sports"))
-            System.out.println(sportsQuestions.removeFirst());
-        if (currentCategory().equals("Rock"))
-            System.out.println(rockQuestions.removeFirst());
+        String currentCategory = currentCategory();
+        System.out.println("The category is " + currentCategory);
+        if (currentCategory.equals("Pop"))
+            System.out.println(questionMap.get(Category.POP).removeFirst());
+        if (currentCategory.equals("Science"))
+            System.out.println(questionMap.get(Category.SCIENCE).removeFirst());
+        if (currentCategory.equals("Sports"))
+            System.out.println(questionMap.get(Category.SPORTS).removeFirst());
+        if (currentCategory.equals("Rock"))
+            System.out.println(questionMap.get(Category.ROCK).removeFirst());
     }
 
     private String currentCategory() {
