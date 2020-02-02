@@ -10,7 +10,6 @@ public class Game {
     HashMap<Category, LinkedList<String>> questionMap = new HashMap<>();
 
     int currentPlayer = 0;
-    boolean isGettingOutOfPenaltyBox;
 
     public Game() {
         for (Category category : Category.values()) {
