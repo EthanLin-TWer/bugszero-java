@@ -12,20 +12,14 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
-        LinkedList<String> popQuestions = new LinkedList<>();
-        LinkedList<String> scienceQuestions = new LinkedList<>();
-        LinkedList<String> sportsQuestions = new LinkedList<>();
-        LinkedList<String> rockQuestions = new LinkedList<>();
-        for (int i = 0; i < 50; i++) {
-            popQuestions.addLast("Pop Question " + i);
-            scienceQuestions.addLast(("Science Question " + i));
-            sportsQuestions.addLast(("Sports Question " + i));
-            rockQuestions.addLast(createRockQuestion(i));
+        for (Category category : Category.values()) {
+            LinkedList<String> list = new LinkedList<>();
+            for (int i = 0; i < 50; i++) {
+                String question = category.getValue() + " Question " + i;
+                list.addLast(question);
+            }
+            questionMap.put(category, list);
         }
-        questionMap.put(Category.POP, popQuestions);
-        questionMap.put(Category.SCIENCE, scienceQuestions);
-        questionMap.put(Category.SPORTS, sportsQuestions);
-        questionMap.put(Category.ROCK, rockQuestions);
     }
 
     public String createRockQuestion(int index) {
