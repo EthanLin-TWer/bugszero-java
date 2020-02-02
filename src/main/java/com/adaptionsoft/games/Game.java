@@ -135,10 +135,10 @@ public class Game {
     }
 
     private void gainGoldCoin() {
-        goldCoins[currentPlayer]++;
+        tempPlayers.get(currentPlayer).goldCoin++;
         System.out.println(getCurrentPlayer()
                 + " now has "
-                + goldCoins[currentPlayer]
+                + tempPlayers.get(currentPlayer).goldCoin
                 + " Gold Coins.");
     }
 
@@ -162,6 +162,6 @@ public class Game {
 
 
     private boolean didPlayerWin() {
-        return !(goldCoins[currentPlayer] == 6);
+        return !(tempPlayers.get(currentPlayer).goldCoin == 6);
     }
 }
