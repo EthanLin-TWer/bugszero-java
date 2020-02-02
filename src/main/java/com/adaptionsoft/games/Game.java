@@ -35,13 +35,13 @@ public class Game {
             if (roll % 2 != 0) {
                 getOutOfPenaltyBox();
                 players.get(currentPlayer).moveTo(roll);
-                askQuestion();
+                tempAskQuestion();
             } else {
                 stayInPenaltyBox();
             }
         } else {
             players.get(currentPlayer).moveTo(roll);
-            askQuestion();
+            tempAskQuestion();
         }
     }
 
@@ -56,6 +56,12 @@ public class Game {
             System.out.println(questionMap.get(Category.SPORTS).removeFirst());
         if (currentCategory.equals("Rock"))
             System.out.println(questionMap.get(Category.ROCK).removeFirst());
+    }
+
+    private void tempAskQuestion() {
+        Category currentCategory = tempCurrentCategory();
+        System.out.println("The category is " + currentCategory.getValue());
+        System.out.println(questionMap.get(currentCategory).removeFirst());
     }
 
     private String currentCategory() {
