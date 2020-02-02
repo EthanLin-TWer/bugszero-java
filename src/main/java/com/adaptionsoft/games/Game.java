@@ -78,7 +78,7 @@ public class Game {
     }
 
     private int getCurrentPlace() {
-        return players.getCurrentPlayer().place;
+        return players.getCurrentPlayer().getPlace();
     }
 
     private String getCurrentPlayerName() {
