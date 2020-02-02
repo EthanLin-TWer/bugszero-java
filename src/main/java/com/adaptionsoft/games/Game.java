@@ -114,9 +114,7 @@ public class Game {
 						+ goldCoins[currentPlayer]
 						+ " Gold Coins.");
 
-				boolean winner = didPlayerWin();
-
-				return winner;
+				return didPlayerWin();
 			} else {
 				currentPlayer++;
 				if (currentPlayer == players.size()) currentPlayer = 0;
