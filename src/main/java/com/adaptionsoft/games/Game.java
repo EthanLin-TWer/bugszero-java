@@ -29,7 +29,7 @@ public class Game {
             roll(rand.nextInt(5) + 1);
 
             if (rand.nextInt(9) == 7) {
-                notAWinner = wrongAnswer();
+                wrongAnswer();
             } else {
                 notAWinner = wasCorrectlyAnswered();
             }
@@ -95,11 +95,10 @@ public class Game {
         }
     }
 
-    public boolean wrongAnswer() {
+    public void wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         sendToPenaltyBox();
         nextPlayer();
-        return true;
     }
 
     private void sendToPenaltyBox() {
